@@ -121,7 +121,7 @@ def photo(sample_id, alt, sizes="(max-width: 900px) 100vw, 60vw", eager=False, c
 
 
 LOGO_MARK = ('<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="LGID" x1="0" y1="0" x2="1" y2="1">'
-             '<stop offset="0" stop-color="#47b5ff"/><stop offset="1" stop-color="#2a5fd8"/></linearGradient></defs>'
+             '<stop offset="0" stop-color="#ffb35e"/><stop offset="1" stop-color="#ef5a3a"/></linearGradient></defs>'
              '<rect width="64" height="64" rx="14" fill="url(#LGID)"/>'
              '<path d="M18 34a14 14 0 0 1 28 0z" fill="#fff"/>'
              '<path d="M12 41c5-4 10-4 15 0s10 4 15 0 10-4 10-2" stroke="#fff" stroke-width="3.6" fill="none" stroke-linecap="round"/>'
@@ -231,7 +231,7 @@ def faq_ld(faq):
 
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Public+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">')
+         '<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400..800;1,400&display=swap" rel="stylesheet">')
 
 
 def head(title, desc, path, lds=(), og_type="website", noindex=False, image=None):
@@ -246,7 +246,7 @@ def head(title, desc, path, lds=(), og_type="website", noindex=False, image=None
 <title>{esc(full)}</title>
 <meta name="description" content="{esc(desc)}">
 {robots}<link rel="canonical" href="{absu(path)}">
-<meta name="theme-color" content="#121a24">
+<meta name="theme-color" content="#0a1d1d">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{esc(NAME)}">
 <meta property="og:title" content="{esc(full)}">
