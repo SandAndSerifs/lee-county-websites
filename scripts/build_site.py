@@ -115,8 +115,18 @@ def gtm_id():
     return gid if re.fullmatch(r"GTM-[A-Z0-9]+", gid) else ""
 
 
+def ga4_id():
+    gid = CFG.get("ga4_id", "").strip()
+    return gid if re.fullmatch(r"G-[A-Z0-9]+", gid) else ""
+
+
 def tracking_tags():
     out = []
+    gaid = ga4_id()
+    if gaid:
+        out.append(f'<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id={gaid}"></script>\n'
+                   "<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n"
+                   f"  gtag('js', new Date());\n\n  gtag('config', '{gaid}');\n</script>")
     if CFG.get("gsc_verification"):
         out.append(f'<meta name="google-site-verification" content="{esc(CFG["gsc_verification"])}">')
     gid = gtm_id()
@@ -126,7 +136,7 @@ def tracking_tags():
                    "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n"
                    "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n"
                    f"}})(window,document,'script','dataLayer','{gid}');</script>\n<!-- End Google Tag Manager -->")
-    else:
+    elif not gaid:
         out.append("<!-- Google Tag Manager: add a container ID (GTM-...) to site.config.json and rebuild. -->")
     return "\n".join(out)
 
