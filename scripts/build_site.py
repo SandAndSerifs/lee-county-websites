@@ -6,6 +6,7 @@ Writes into public/:
   index.html                       home page
   services/, areas/, blog/         hubs plus one page per entry
   pricing/, contact/, privacy/, 404.html
+  samples/                         clickable demo sites for the sample businesses (noindex)
   sitemap.xml, robots.txt, llms.txt
 
 No dependencies beyond Python 3. Safe to run again: every output is rebuilt.
@@ -27,6 +28,7 @@ from services import SERVICES  # noqa: E402
 from areas import AREAS  # noqa: E402
 from blog import POSTS  # noqa: E402
 from samples import SAMPLES  # noqa: E402
+from demos import DEMOS  # noqa: E402
 
 CFG = json.loads((ROOT / "site.config.json").read_text(encoding="utf-8"))
 SITE = CFG["site_url"].rstrip("/")
@@ -101,7 +103,15 @@ def kind_lc(smp):
 
 
 def mock_caption(smp):
-    return f'<figcaption>Sample design: {esc(kind_lc(smp))} website, shown on a laptop and a phone.</figcaption>'
+    return (f'<figcaption>Sample design: {esc(kind_lc(smp))} website. '
+            f'<a href="/samples/{smp["id"]}/">Click through the sample site</a></figcaption>')
+
+
+def mock_figure(smp, cls, sizes, eager=False):
+    """The mockup links to its clickable demo. The caption link carries the name for
+    screen readers, so the picture link is skipped by keyboard and assistive tech."""
+    return (f'<figure class="{cls}"><a class="mk-link" href="/samples/{smp["id"]}/" tabindex="-1" aria-hidden="true">'
+            f'{site_mock(smp, sizes=sizes, eager=eager)}</a>{mock_caption(smp)}</figure>')
 
 
 def site_mock(smp, sizes="(max-width: 900px) 100vw, 50vw", eager=False):
@@ -328,7 +338,7 @@ def footer():
     <div class="ft-brand">{logo_link("lg-ft")}<p>Fixed-price websites for small businesses in Fort Myers, Cape Coral and across Lee County, Florida.</p>{mail}</div>
     <div><h2>Services</h2><ul>{svc}</ul></div>
     <div><h2>Towns</h2><ul>{towns}</ul></div>
-    <div><h2>More</h2><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#about">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li></ul></div>
+    <div><h2>More</h2><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/samples/">Sample designs</a></li><li><a href="/#about">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li></ul></div>
   </div>
   <div class="wrap ft-base"><p>&copy; <span id="year">2026</span> {esc(NAME)}.{parent}</p></div>
 </footer>"""
@@ -368,7 +378,7 @@ def area_media(a):
         return ""
     sid = AREA_PHOTO[a["slug"]]
     smp = next(x for x in SAMPLES if x["id"] == sid)
-    return f'<figure class="shot">{site_mock(smp, sizes="(max-width: 760px) 80vw, 600px")}{mock_caption(smp)}</figure>'
+    return mock_figure(smp, "shot", "(max-width: 760px) 80vw, 600px")
 
 
 def cta_band(topic=""):
@@ -492,7 +502,7 @@ def build_index():
     <p class="lede">Clear, fast websites at a fixed price: one page for $500, or up to five pages for $1,500. Built by hand, set up for Google, and yours from day one.</p>
     <p class="hero-act"><a class="btn btn-go btn-lg" href="/contact/">Get a free quote</a><a class="text-link" href="/pricing/">See pricing</a></p>
   </div>
-  <figure class="hero-shot">{site_mock(hero, sizes="(max-width: 900px) 85vw, 40vw", eager=True)}{mock_caption(hero)}</figure>
+  {mock_figure(hero, "hero-shot", "(max-width: 900px) 85vw, 40vw", eager=True)}
 </div></section>
 <div class="wrap">
 <section class="sec"><h2>What I can do for you</h2><p class="sec-lede">Everything a small business needs to be found and chosen online, at a price agreed before any work starts.</p>{svc}</section>
@@ -723,6 +733,147 @@ def build_404():
     (PUB / "404.html").write_text(page(head("Page not found", "This page doesn't exist.", "/404.html", noindex=True), body), encoding="utf-8")
 
 
+# ------------------------------------------------------------------ sample demo sites
+
+def tel(phone):
+    return "tel:+1" + re.sub(r"\D", "", phone)
+
+
+def demo_block(b, smp, base):
+    kind, heading = b[0], b[1]
+    h = f'<h2 class="d-h2">{esc(heading)}</h2>' if heading else ""
+    if kind == "cards":
+        items = b[2] or smp["cards"]
+        link = f'{base}{DEMOS[smp["id"]]["pages"][0]["slug"]}/' if b[2] is None else ""
+        cards = "".join(f'<div class="d-card"><h3>{esc(t)}</h3><p>{esc(d)}</p><p class="d-price">{esc(pr)}</p></div>' for t, d, pr in items)
+        more = f'<p class="d-more"><a href="{link}">See all {esc(DEMOS[smp["id"]]["pages"][0]["nav"].lower())}</a></p>' if link else ""
+        return f'<section class="d-sec">{h}<div class="d-cards">{cards}</div>{more}</section>'
+    if kind == "features":
+        items = "".join(f'<div class="d-feat"><h3>{esc(t)}</h3><p>{esc(d)}</p></div>' for t, d in b[2])
+        return f'<section class="d-sec d-alt"><div class="d-in">{h}<div class="d-feats">{items}</div></div></section>'
+    if kind == "list":
+        items = "".join(f"<li>{esc(x)}</li>" for x in b[2])
+        return f'<section class="d-sec">{h}<ul class="d-list">{items}</ul></section>'
+    if kind == "table":
+        cols = "".join(f'<th scope="col">{esc(c)}</th>' for c in b[2])
+        rows = "".join("<tr>" + "".join((f'<th scope="row">{esc(c)}</th>' if i == 0 else f"<td>{esc(c)}</td>") for i, c in enumerate(r)) + "</tr>" for r in b[3])
+        return f'<section class="d-sec">{h}<div class="d-table"><table><thead><tr>{cols}</tr></thead><tbody>{rows}</tbody></table></div></section>'
+    if kind == "faq":
+        items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in b[2])
+        return f'<section class="d-sec">{h}<div class="d-faq">{items}</div></section>'
+    if kind == "text":
+        paras = "".join(f"<p>{esc(x)}</p>" for x in b[2])
+        return f'<section class="d-sec d-text">{h}{paras}</section>'
+    raise SystemExit(f"unknown demo block {kind}")
+
+
+def demo_form(fields, button, smp):
+    out = []
+    for i, (label, kind, opts) in enumerate(fields):
+        fid = f"df-{i}"
+        if kind == "select":
+            ctl = f'<select id="{fid}">' + "".join(f"<option>{esc(o)}</option>" for o in opts) + "</select>"
+        elif kind == "textarea":
+            ctl = f'<textarea id="{fid}" rows="4"></textarea>'
+        else:
+            ctl = f'<input id="{fid}" type="{kind}">'
+        wide = " wide" if kind == "textarea" else ""
+        out.append(f'<div class="d-field{wide}"><label for="{fid}">{esc(label)}</label>{ctl}</div>')
+    return (f'<form class="d-form" data-demo>{"".join(out)}<div class="d-field wide"><button class="d-btn" type="submit">{esc(button)}</button>'
+            f'<p class="d-status" role="status" aria-live="polite"></p></div></form>')
+
+
+def demo_page(smp, d, slug, title, body, desc):
+    i = smp["id"]
+    base = f"/samples/{i}/"
+    act_slug, act_label = d["action"]
+    links = [(pg["nav"], f'{base}{pg["slug"]}/') for pg in d["pages"]]
+    cur = f"{base}{slug}/" if slug else base
+    nav = "".join(f'<a href="{u}"{" aria-current=page" if u == cur else ""}>{esc(n)}</a>' for n, u in links)
+    initial = smp["name"][0]
+    fav = ("data:image/svg+xml," + re.sub(r"\s+", " ", f"""<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23{ {"charter": "ff7a45", "hvac": "1463ff", "coffee": "c8553d", "cottage": "2a9d8f"}[i]}'/><text x='16' y='22' font-family='Arial' font-weight='700' font-size='18' fill='white' text-anchor='middle'>{initial}</text></svg>"""))
+    full = f"{title} | {smp['name']}" if slug else f"{smp['name']} | {smp['kind']}"
+    foot_links = "".join(f'<li><a href="{u}">{esc(n)}</a></li>' for n, u in links)
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(full)} (sample design)</title>
+<meta name="description" content="{esc(desc)} A sample website design by {esc(NAME)}.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{esc(full)} (sample design)">
+<meta property="og:description" content="A sample {esc(kind_lc(smp))} website by {esc(NAME)}. Click through it on your phone.">
+<meta property="og:url" content="{absu(cur)}">
+<meta property="og:image" content="{absu(f"/assets/img/samples/{i}-1280.webp")}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{fav}">
+{FONTS}
+<link rel="stylesheet" href="/assets/css/demo.css">
+{tracking_tags()}
+</head>
+<body class="d d-{i}">
+<div class="d-bar"><p><b>Sample design</b> <span>by {esc(NAME)}</span></p><p><a href="/samples/">All samples</a><a href="/contact/">Get a site like this</a></p></div>
+<header class="d-head"><div class="d-in d-head-in">
+  <a class="d-logo" href="{base}"><b class="d-mark" aria-hidden="true">{esc(initial)}</b>{esc(smp["name"])}</a>
+  <nav class="d-nav" aria-label="Main">{nav}</nav>
+  <a class="d-btn d-head-cta" href="{base}{act_slug}/">{esc(act_label)}</a>
+  <details class="d-menu"><summary aria-label="Menu"><i></i><i></i><i></i></summary><nav aria-label="Menu">{nav}<a class="d-btn" href="{base}{act_slug}/">{esc(act_label)}</a></nav></details>
+</div></header>
+<main id="main">
+{body}
+<section class="d-band"><div class="d-in"><h2>{esc(d["tagline"])}</h2><p><a class="d-btn" href="{base}{act_slug}/">{esc(act_label)}</a><a class="d-btn d-btn2" href="{tel(smp["phone"])}">Call {esc(smp["phone"])}</a></p></div></section>
+</main>
+<footer class="d-foot"><div class="d-in d-foot-grid">
+  <div><p class="d-logo"><b class="d-mark" aria-hidden="true">{esc(initial)}</b>{esc(smp["name"])}</p><p>{esc(d["tagline"])}</p></div>
+  <div><h2>Contact</h2><p><a href="{tel(smp["phone"])}">{esc(smp["phone"])}</a><br><a href="mailto:{esc(d["email"])}">{esc(d["email"])}</a></p><p>{esc(d["hours"])}</p></div>
+  <div><h2>Find us</h2><p>{esc(d["area"])}</p></div>
+  <div><h2>Pages</h2><ul>{foot_links}<li><a href="{base}{act_slug}/">{esc(act_label)}</a></li></ul></div>
+</div><p class="d-in d-credit">Sample website design by <a href="/">{esc(NAME)}</a>. {esc(smp["name"])} is not a real business.</p></footer>
+<a class="d-call" href="{tel(smp["phone"])}">Call {esc(smp["phone"])}</a>
+<script src="/assets/js/demo.js" defer></script>
+</body>
+</html>
+"""
+
+
+def build_demos():
+    for smp in SAMPLES:
+        i = smp["id"]
+        if i not in DEMOS:
+            continue
+        d = DEMOS[i]
+        base = f"/samples/{i}/"
+        act_slug, act_label = d["action"]
+        hero = f"""<section class="d-hero">{photo(i, "", sizes="100vw", eager=True, cls="d-hero-img")}
+  <div class="d-in d-hero-copy"><p class="d-kick">{esc(smp["kicker"])}</p><h1>{esc(smp["headline"])}</h1><p class="d-sub">{esc(smp["sub"])}</p>
+  <p class="d-acts"><a class="d-btn" href="{base}{act_slug}/">{esc(act_label)}</a><a class="d-btn d-btn2" href="{tel(smp["phone"])}">{esc(smp["phone"])}</a></p></div></section>"""
+        body = hero + "".join(demo_block(b, smp, base) for b in d["home"])
+        write(base, demo_page(smp, d, "", "Home", body, smp["sub"]))
+        for pg in d["pages"]:
+            top = f"""<section class="d-top">{photo(i, "", sizes="100vw", cls="d-top-img")}<div class="d-in"><h1>{esc(pg["title"])}</h1><p>{esc(pg["intro"])}</p></div></section>"""
+            write(f'{base}{pg["slug"]}/', demo_page(smp, d, pg["slug"], pg["title"], top + "".join(demo_block(b, smp, base) for b in pg["blocks"]), pg["intro"]))
+        ap = d["action_page"]
+        top = f"""<section class="d-top">{photo(i, "", sizes="100vw", cls="d-top-img")}<div class="d-in"><h1>{esc(ap["title"])}</h1><p>{esc(ap["intro"])}</p></div></section>"""
+        side = (f'<aside class="d-side"><h2>Rather talk?</h2><p><a class="d-btn" href="{tel(smp["phone"])}">Call {esc(smp["phone"])}</a></p>'
+                f'<p>{esc(d["hours"])}</p><p><a href="mailto:{esc(d["email"])}">{esc(d["email"])}</a></p></aside>')
+        body = top + f'<section class="d-sec d-formwrap">{demo_form(ap["form"], ap["button"], smp)}{side}</section>'
+        write(f"{base}{act_slug}/", demo_page(smp, d, act_slug, ap["title"], body, ap["intro"]))
+
+    cards = "".join(
+        f"""<article class="sample-card">{mock_figure(smp, "sample-fig", "(max-width: 760px) 90vw, 520px")}
+  <h2><a href="/samples/{smp["id"]}/">{esc(smp["kind"])}</a></h2><p>{esc(smp["note"])}</p></article>"""
+        for smp in SAMPLES if smp["id"] in DEMOS)
+    trail = [("Home", "/"), ("Sample designs", "/samples/")]
+    body = f"""<div class="wrap">{breadcrumbs(trail)}
+<header class="page-head"><h1>Sample website designs</h1>
+<p class="lede">Four sample sites for the kinds of businesses I build for in Lee County. Each one is a working site you can click through on your phone or computer. The businesses aren't real.</p></header>
+<div class="sample-grid">{cards}</div>
+{cta_band()}</div>"""
+    write("/samples/", page(head("Sample website designs", "Click through four sample small business websites designed by Lee County Websites.", "/samples/", noindex=True), body))
+
+
 # ------------------------------------------------------------------ SEO files
 
 def build_sitemap():
@@ -790,6 +941,7 @@ def main():
     build_contact()
     build_privacy()
     build_404()
+    build_demos()
     build_seo_files()
     bust_asset_cache()
     build_sitemap()
