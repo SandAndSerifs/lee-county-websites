@@ -9,10 +9,8 @@
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash"
   },
-  "routes": [
-    { "pattern": "leecountywebsites.com", "custom_domain": true },
-    { "pattern": "www.leecountywebsites.com", "custom_domain": true }
-  ],
+  // Custom domains (leecountywebsites.com and www) are attached in the Cloudflare dashboard:
+  // Workers > lee-county-websites > Settings > Domains & Routes.
   "observability": { "enabled": true },
   // Keeps variables and secrets set in the Cloudflare dashboard when deploying from GitHub.
   "keep_vars": true,
