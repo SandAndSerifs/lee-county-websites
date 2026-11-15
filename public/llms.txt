@@ -7,7 +7,7 @@ Key facts:
 - Payment: half at the start, half at launch. Care plans are optional.
 - Clients own their domain, code and hosting. Sites are hosted on Cloudflare.
 - Areas served: Fort Myers, FL, Cape Coral, FL, Bonita Springs, FL, Estero, FL, Lehigh Acres, FL, Sanibel, FL, North Fort Myers, FL, Fort Myers Beach, FL, and the rest of Lee County. Projects run by video call and email.
-- Contact: https://leecountywebsites.com/contact/ or info@sandandserifs.com
+- Contact: https://leecountywebsites.com/contact/ or info@leecountywebsites.com
 
 ## Services
 - [Small business website design](https://leecountywebsites.com/services/small-business-website-design/): I build websites for small businesses in Fort Myers, Cape Coral and the rest of Lee County.
