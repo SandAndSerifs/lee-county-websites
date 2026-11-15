@@ -33,7 +33,7 @@ AREAS = [
 </ul>
 """),
             ("How I'd approach it", """
-<p>Take a made-up example: an air conditioning company based off Colonial Boulevard. In August, a homeowner with a dead unit is searching on a phone in a hot house. The site I'd build opens with a big tap-to-call button, \"same day service in Fort Myers, Cape Coral and Lehigh Acres\", and a short form for people who'd rather text. Each main service gets its own page, and the Google Business Profile lists the same towns, word for word.</p>
+<p>Take an example: an air conditioning company based off Colonial Boulevard. In August, a homeowner with a dead unit is searching on a phone in a hot house. The site I'd build opens with a big tap-to-call button, \"same day service in Fort Myers, Cape Coral and Lehigh Acres\", and a short form for people who'd rather text. Each main service gets its own page, and the Google Business Profile lists the same towns, word for word.</p>
 """),
         ],
         "checklist": [
@@ -70,7 +70,7 @@ AREAS = [
 <p>With hundreds of miles of canals, Cape Coral has a big marine economy: boat lifts, dock and seawall builders, detailing, mobile mechanics, charters and rentals. Those customers want to see your work and know you handle their kind of job. For a marine business I'd lead with real project photos, the services you actually offer and a quote form that asks the right questions, like boat length or lift capacity, so your first call is a useful one.</p>
 """),
             ("What that could look like", """
-<p>Picture a made-up fishing charter that runs out of Cape Coral. Most bookings come from visitors planning a trip a few weeks ahead, often on a phone. The site would open with trip lengths, prices and what's included, then a booking request form with dates and party size. A short page answers the usual questions: what to bring, whether licenses are covered, what happens if the weather turns.</p>
+<p>Picture a fishing charter that runs out of Cape Coral. Most bookings come from visitors planning a trip a few weeks ahead, often on a phone. The site would open with trip lengths, prices and what's included, then a booking request form with dates and party size. A short page answers the usual questions: what to bring, whether licenses are covered, what happens if the weather turns.</p>
 """),
         ],
         "checklist": [
@@ -107,7 +107,7 @@ AREAS = [
 <p>Bonita has a lot of golf and gated communities, a busy wellness and medical scene, and dining and shops around the old downtown along the Imperial River. Customers compare options carefully. A clean design with good photos, clear prices or price ranges, and easy booking does a lot of the selling before anyone calls.</p>
 """),
             ("What that could look like", """
-<p>Say a made-up massage and skincare studio near Bonita Beach Road. The site would show the treatments with lengths and prices, a gallery of the actual rooms, gift cards for visiting family, and a booking button that goes straight to their scheduling tool. A short page for seasonal residents explains how to book ahead for the busy months.</p>
+<p>Say a massage and skincare studio near Bonita Beach Road. The site would show the treatments with lengths and prices, a gallery of the actual rooms, gift cards for visiting family, and a booking button that goes straight to their scheduling tool. A short page for seasonal residents explains how to book ahead for the busy months.</p>
 """),
         ],
         "checklist": [
@@ -144,7 +144,7 @@ AREAS = [
 <p>A lot of Estero's newer neighborhoods are full of families looking for dentists, pediatricians, tutors, gyms, cleaners and lawn care for the first time. They read reviews and websites closely. Pages that explain how a first visit works, what it costs and how to book give them the confidence to pick you.</p>
 """),
             ("What that could look like", """
-<p>Imagine a made-up boutique fitness studio near Estero Parkway. The site would put the class schedule right up front, offer a first class free with a short sign-up form, and have a page that explains what to expect for complete beginners. The Google Business Profile would match the class times and link straight to sign-up.</p>
+<p>Imagine a boutique fitness studio near Estero Parkway. The site would put the class schedule right up front, offer a first class free with a short sign-up form, and have a page that explains what to expect for complete beginners. The Google Business Profile would match the class times and link straight to sign-up.</p>
 """),
         ],
         "checklist": [
@@ -181,7 +181,7 @@ AREAS = [
 <p>Many Lehigh Acres households are more comfortable in Spanish. If that's true of your customers, a site with Spanish versions of the key pages is easy to set up and tells people straight away that you'll understand them. I build them as proper pages Google can show to Spanish searchers, not an automatic translate button.</p>
 """),
             ("What that could look like", """
-<p>Take a made-up pavers and driveway company. Its home page leads with a photo of a finished driveway, the towns covered (Lehigh Acres, Fort Myers, Cape Coral), and a quote form that asks for the size of the job and a couple of photos. A gallery page shows before and after pairs, and each page has an English and Spanish version.</p>
+<p>Take a pavers and driveway company. Its home page leads with a photo of a finished driveway, the towns covered (Lehigh Acres, Fort Myers, Cape Coral), and a quote form that asks for the size of the job and a couple of photos. A gallery page shows before and after pairs, and each page has an English and Spanish version.</p>
 """),
         ],
         "checklist": [
@@ -218,7 +218,7 @@ AREAS = [
 <p>Since Hurricane Ian in 2022, many island businesses have rebuilt, reopened or moved. Visitors still wonder what's open. A clear \"open daily\" line with current hours, recent photos and an updated Google Business Profile removes that doubt, and it's worth checking every season.</p>
 """),
             ("What that could look like", """
-<p>Consider a made-up beach cottage rental near the lighthouse end of the island. The site would lead with photos, the number of guests and bedrooms, rates by season and an availability calendar or booking link. A short local guide covers parking, bikes and the best shelling times, which also gives Google more reasons to show the page.</p>
+<p>Consider a beach cottage rental near the lighthouse end of the island. The site would lead with photos, the number of guests and bedrooms, rates by season and an availability calendar or booking link. A short local guide covers parking, bikes and the best shelling times, which also gives Google more reasons to show the page.</p>
 """),
         ],
         "checklist": [
@@ -255,7 +255,7 @@ AREAS = [
 <p>For many people here, crossing a bridge into Fort Myers is a real trip, so they look for businesses close by. If you're north of the river, say so plainly, along with the roads people know, like Business 41, Pondella Road or Bayshore Road. It helps you show up for searches from North Fort Myers and nearby Cape Coral.</p>
 """),
             ("What that could look like", """
-<p>Picture a made-up small engine and golf cart repair shop. The site would put the phone number and hours at the top in large type, list what they fix and whether they offer pickup, and include a simple map. A short page explains how long typical repairs take and what they cost, so customers know before they call.</p>
+<p>Picture a small engine and golf cart repair shop. The site would put the phone number and hours at the top in large type, list what they fix and whether they offer pickup, and include a simple map. A short page explains how long typical repairs take and what they cost, so customers know before they call.</p>
 """),
         ],
         "checklist": [
@@ -292,7 +292,7 @@ AREAS = [
 <p>A lot of beach customers decide on the spot, standing on the sand or walking toward Times Square, looking for lunch, a parasail, a bike or a boat. They need prices, hours and a booking button without scrolling. Heavy pages and pop-ups lose them on a weak beach signal, so I keep pages light and fast.</p>
 """),
             ("What that could look like", """
-<p>Think of a made-up watersports rental near the pier. The site opens with today's hours and a weather note you can change in seconds, a short price list for jet skis, paddleboards and parasailing, and a booking button. A page covers what to bring, age limits and the cancellation policy for bad weather.</p>
+<p>Think of a watersports rental near the pier. The site opens with today's hours and a weather note you can change in seconds, a short price list for jet skis, paddleboards and parasailing, and a booking button. A page covers what to bring, age limits and the cancellation policy for bad weather.</p>
 """),
         ],
         "checklist": [

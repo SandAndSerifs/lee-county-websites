@@ -1,9 +1,13 @@
-"""Made-up sample businesses for the featured carousel. Every one is labelled as a
-sample on the page. Photos were generated with Figma AI (no people, text or logos)."""
+"""Sample businesses shown as website mockups (laptop and phone). Each is labelled
+as a sample design on the page. Photos were generated with Figma AI (no people, text or logos)."""
 
 SAMPLES = [
     {
         "id": "charter",
+        "kicker": "Cape Coral, Florida",
+        "sub": "Licensed captain, rods, bait and ice included. Up to four guests per trip.",
+        "phone": "(239) 555-0148",
+        "cards": [("Half day", "4 hours in the canals and bay", "From $550"), ("Full day", "8 hours offshore or backcountry", "From $950"), ("Sunset cruise", "2 hours, great for families", "From $300")],
         "name": "Tidewell Charters",
         "kind": "Fishing charters",
         "town": "Cape Coral",
@@ -19,6 +23,10 @@ SAMPLES = [
     },
     {
         "id": "hvac",
+        "kicker": "Fort Myers \u00b7 Lehigh Acres \u00b7 Cape Coral",
+        "sub": "Licensed, insured techs with upfront prices before any work starts.",
+        "phone": "(239) 555-0163",
+        "cards": [("A/C repair", "Same day visits, 7 days a week", "Book a visit"), ("New systems", "Free quotes on installs", "Get a quote"), ("Tune-ups", "Twice a year maintenance", "See plans")],
         "name": "Pelican Row Air",
         "kind": "A/C repair and installs",
         "town": "Fort Myers",
@@ -34,6 +42,10 @@ SAMPLES = [
     },
     {
         "id": "coffee",
+        "kicker": "River District, Fort Myers",
+        "sub": "Open every day, 7am to 3pm. Pastries baked here each morning.",
+        "phone": "(239) 555-0119",
+        "cards": [("Iced oat latte", "Our house espresso over ice", "$5.50"), ("Guava pastry", "Flaky, baked each morning", "$3.75"), ("Cold brew", "Steeped for 18 hours", "$4.75")],
         "name": "Little Spoonbill Coffee",
         "kind": "Coffee and pastries",
         "town": "Fort Myers River District",
@@ -49,6 +61,10 @@ SAMPLES = [
     },
     {
         "id": "cottage",
+        "kicker": "Fort Myers Beach, Florida",
+        "sub": "Four cottages a short walk from the beach, with bikes and chairs included.",
+        "phone": "(239) 555-0172",
+        "cards": [("The Sandpiper", "2 bedrooms, sleeps 4", "From $189/night"), ("The Heron", "3 bedrooms, sleeps 6", "From $249/night"), ("The Pelican", "Studio, sleeps 2", "From $139/night")],
         "name": "Seagrape Lane Cottages",
         "kind": "Beach cottage rentals",
         "town": "Fort Myers Beach",

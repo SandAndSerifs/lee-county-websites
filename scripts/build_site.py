@@ -95,6 +95,43 @@ def photo(sample_id, alt, sizes="(max-width: 900px) 100vw, 60vw", eager=False, c
             f'sizes="{sizes}" width="1280" height="720" alt="{esc(alt)}" {load} decoding="async">')
 
 
+def mock_caption(smp):
+    return f'<figcaption>Sample design: {esc(smp["kind"].lower())} website, shown on a laptop and a phone.</figcaption>'
+
+
+def site_mock(smp, sizes="(max-width: 900px) 100vw, 50vw", eager=False):
+    """A sample website drawn in HTML: a browser window with the desktop layout and a
+    phone with the mobile layout. Everything inside is decorative; the wrapper carries
+    one text description for screen readers."""
+    i = smp["id"]
+    initial = smp["name"][0]
+    label = f'Sample website design for a {smp["kind"].lower()} business in {smp["town"]}, shown on a laptop and a phone'
+    nav = "".join(f"<span>{esc(n)}</span>" for n in smp["nav"])
+    cards = "".join(f'<div class="ms-card"><p class="ms-ct">{esc(t)}</p><p class="ms-cd">{esc(d)}</p><p class="ms-cp">{esc(pr)}</p></div>'
+                    for t, d, pr in smp["cards"])
+    pcards = "".join(f'<div class="mp-row"><span>{esc(t)}</span><b>{esc(pr)}</b></div>' for t, d, pr in smp["cards"][:2])
+    img = photo(i, "", sizes=sizes, eager=eager, cls="ms-img")
+    pimg = photo(i, "", sizes="160px", eager=eager, cls="ms-img")
+    return f"""<div class="mk mk-{i}" role="img" aria-label="{esc(label)}">
+  <div class="mk-desk">
+    <div class="mk-chrome"><span class="mk-dots"><i></i><i></i><i></i></span><span class="mk-tab"><b class="mk-fav">{esc(initial)}</b>{esc(smp["name"])}</span></div>
+    <div class="mk-urlbar"><span class="mk-arrows">&#8249; &#8250;</span><span class="mk-addr"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M2 5V3.5a3 3 0 0 1 6 0V5h1v7H1V5zm1.5 0h3V3.5a1.5 1.5 0 0 0-3 0z"/></svg><i></i></span></div>
+    <div class="ms">
+      <div class="ms-nav"><span class="ms-logo"><b class="ms-mark">{esc(initial)}</b>{esc(smp["name"])}</span><span class="ms-links">{nav}</span><span class="ms-btn">{esc(smp["cta"])}</span></div>
+      <div class="ms-hero">{img}<div class="ms-copy"><p class="ms-kick">{esc(smp["kicker"])}</p><p class="ms-h">{esc(smp["headline"])}</p><p class="ms-sub">{esc(smp["sub"])}</p><p class="ms-acts"><span class="ms-btn">{esc(smp["cta"])}</span><span class="ms-btn2">{esc(smp["phone"])}</span></p></div></div>
+      <div class="ms-cards">{cards}</div>
+    </div>
+  </div>
+  <div class="mk-phone"><div class="mp">
+    <div class="mp-status"><span>9:41</span><span class="mp-notch"></span><span class="mp-bat"></span></div>
+    <div class="ms-nav mp-nav"><span class="ms-logo"><b class="ms-mark">{esc(initial)}</b>{esc(smp["name"])}</span><span class="mp-burger"><i></i><i></i><i></i></span></div>
+    <div class="mp-hero">{pimg}<p class="ms-h">{esc(smp["headline"])}</p></div>
+    <div class="mp-body"><span class="ms-btn mp-block">{esc(smp["cta"])}</span>{pcards}</div>
+    <div class="mp-call">&#9742; {esc(smp["phone"])}</div>
+  </div></div>
+</div>"""
+
+
 LOGO_MARK = ('<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="LGID" x1="0" y1="0" x2="1" y2="1">'
              '<stop offset="0" stop-color="#ffb35e"/><stop offset="1" stop-color="#ef5a3a"/></linearGradient></defs>'
              '<rect width="64" height="64" rx="14" fill="url(#LGID)"/>'
@@ -326,8 +363,7 @@ def area_media(a):
         return ""
     sid = AREA_PHOTO[a["slug"]]
     smp = next(x for x in SAMPLES if x["id"] == sid)
-    return (f'<figure class="shot">{photo(sid, smp["alt"], sizes="(max-width: 760px) 100vw, 720px")}'
-            f'<figcaption>Sample design for {esc(smp["name"])}, a made-up {esc(smp["kind"].lower())} business.</figcaption></figure>')
+    return f'<figure class="shot">{site_mock(smp, sizes="(max-width: 760px) 80vw, 600px")}{mock_caption(smp)}</figure>'
 
 
 def cta_band(topic=""):
@@ -451,8 +487,7 @@ def build_index():
     <p class="lede">Clear, fast websites at a fixed price: one page for $500, or up to five pages for $1,500. Built by hand, set up for Google, and yours from day one.</p>
     <p class="hero-act"><a class="btn btn-go btn-lg" href="/contact/">Get a free quote</a><a class="text-link" href="/pricing/">See pricing</a></p>
   </div>
-  <figure class="hero-shot">{photo(hero["id"], hero["alt"], sizes="(max-width: 900px) 100vw, 46vw", eager=True)}
-    <figcaption>Sample design for a made-up Cape Coral fishing charter.</figcaption></figure>
+  <figure class="hero-shot">{site_mock(hero, sizes="(max-width: 900px) 85vw, 40vw", eager=True)}{mock_caption(hero)}</figure>
 </div></section>
 <div class="wrap">
 <section class="sec"><h2>What I can do for you</h2><p class="sec-lede">Everything a small business needs to be found and chosen online, at a price agreed before any work starts.</p>{svc}</section>
