@@ -136,7 +136,7 @@ SERVICES = [
 <p>A roofer based in Fort Myers who also works in Lehigh Acres and Bonita Springs needs the site to say so clearly. Where it makes sense I write a short page for each main service and each town you cover, with something specific to that place on every one. Copy and paste pages with only the town name swapped don't help, and Google has said as much.</p>
 """),
             ("Being the answer in AI search", """
-<p>More people now ask ChatGPT, Gemini or Google's AI answers which business to call. Those tools lean on the same signals: a clear statement of what you do and where, structured data, consistent details across the web and real reviews. I write each page so the first lines answer the question a customer would ask, which is also what AI tools quote.</p>
+<p>More people now ask ChatGPT, Gemini or Google's AI answers which business to call. Those tools lean on the same signals: a clear statement of what you do and where, structured data, consistent details across the web and real reviews. I write each page so the first lines answer the question a customer would ask, which is also what AI tools quote. The details are on my <a href="/services/ai-search-visibility/">AI search visibility</a> page.</p>
 """),
             ("Reviews, without the tricks", """
 <p>Reviews matter a lot for map rankings. I'll give you a short link and a simple routine for asking happy customers, plus template replies for good and bad reviews. I won't buy reviews, filter out unhappy customers or pad your listing with keywords. Those shortcuts get listings suspended.</p>
@@ -157,7 +157,66 @@ SERVICES = [
             ("Can you help with SEO if you didn't build my site?", "Yes. I start by looking at your Business Profile and your site, then tell you what's worth fixing first and what it would cost."),
         ],
         "areas": ["cape-coral-fl", "lehigh-acres-fl", "fort-myers-fl", "estero-fl"],
-        "posts": ["google-business-profile-lee-county", "hurricane-season-website-checklist"],
+        "posts": ["google-business-profile-lee-county", "visitors-ask-chatgpt-lee-county-business"],
+    },
+    {
+        "slug": "ai-search-visibility",
+        "name": "AI search visibility",
+        "short": "AI search",
+        "icon": "chat",
+        "hue": 185,
+        "tags": ["ChatGPT", "Google AI Mode", "Perplexity"],
+        "seo_title": "AI Search Visibility for Fort Myers & Cape Coral Businesses",
+        "description": "Make your Lee County business easy for ChatGPT, Google AI Overviews, Gemini and Perplexity to find, understand and recommend. Part of every site I build, with honest limits.",
+        "h1": "Show up when Lee County customers ask an AI",
+        "lede": "A snowbird planning their winter asks ChatGPT for a good pool service in Cape Coral. A homeowner asks Google's AI Mode who repairs hurricane shutters near Estero. I set your website and listings up so those tools have correct, current facts about you and a page they can send people to.",
+        "price": "Included in every site",
+        "time": "Set up at launch, or 1 to 2 weeks for an existing site",
+        "answer": "AI search visibility means giving tools like ChatGPT, Gemini, Perplexity and Google's AI Overviews and AI Mode what they need to recognize your business and recommend it accurately. For Lee County businesses I make sure their crawlers aren't blocked, write pages that answer customer questions in the first line, add structured data that matches each page, line up your Google and Bing listings and track the visits these tools send. It's part of every website I build, and I can review a site you already have for a fixed quote.",
+        "sections": [
+            ("Where the evidence points", """
+<p>There's a lot of noise about \"AI optimization\" right now, so I stick to what the platforms themselves say and what holds up in testing.</p>
+<ul>
+<li><strong>Google treats it as regular search.</strong> Its <a href="https://developers.google.com/search/docs/appearance/ai-features">documentation on AI features</a> says AI Overviews and AI Mode have no extra requirements. If a page can be indexed and shown with a snippet, it can be used.</li>
+<li><strong>ChatGPT needs to be let in.</strong> OpenAI's crawler documentation says a site that opts out of its search bot is left out of ChatGPT's search results. Security and hosting settings sometimes block it by default, and owners rarely know.</li>
+<li><strong>Specific beats clever.</strong> \"We clean screened lanais and pool cages in Cape Coral and North Fort Myers, starting at $150\" gives an AI something to repeat. \"Quality outdoor solutions\" gives it nothing.</li>
+<li><strong>Other sources count.</strong> Your Google Business Profile, reviews, local directories and mentions in places like chamber listings or local news all feed the picture these tools build of you.</li>
+<li><strong>Not worth paying for:</strong> guaranteed AI rankings, bulk AI-written pages and \"secret\" files. An llms.txt file is fine to have, but Ahrefs found in 2026 that almost none of them get read, so it's an extra, not a strategy.</li>
+</ul>
+"""),
+            ("What I set up", """
+<ul>
+<li><strong>A before picture.</strong> I put your customers' real questions to ChatGPT, Google AI Mode, Gemini and Perplexity and keep a dated record of what each one says about you.</li>
+<li><strong>Open doors for the right crawlers.</strong> I check robots.txt, Cloudflare or other bot settings and any snippet limits, so AI search crawlers can read your pages.</li>
+<li><strong>Pages that lead with the answer.</strong> Services, starting prices, the towns you cover, seasonal hours and the questions you get on the phone, each answered up top.</li>
+<li><strong>Structured data.</strong> Business, service and FAQ markup that agrees with what visitors see on the page.</li>
+<li><strong>Listings that agree.</strong> Matching name, phone and hours on Google Business Profile, Bing Places, Apple Business and the directories that matter in Southwest Florida.</li>
+<li><strong>Tracking.</strong> I connect Search Console and Bing Webmaster Tools, and set up your analytics so visits from AI tools stand out. ChatGPT tags the links it sends, which makes those easy to count.</li>
+</ul>
+"""),
+            ("Season and storms make it matter more", """
+<p>Lee County businesses change hours with the season and sometimes close for storms. AI tools can repeat stale details for weeks. Keeping your site and listings current is the best defense, which is why I make updates quick, and why a <a href="/services/website-care-plans/">care plan</a> can cover them for you.</p>
+"""),
+            ("The honest limits", """
+<p>Nobody outside these companies controls what their AI says, so I don't promise placements or timelines. What I can promise is that the facts about your business are clear, consistent and easy to check, and that we'll look at the results together instead of guessing.</p>
+"""),
+        ],
+        "included": [
+            "Dated record of current AI answers",
+            "AI crawlers let in, bot rules reviewed",
+            "Pages that lead with the answer",
+            "Structured data matching each page",
+            "Google, Bing and Apple listings aligned",
+            "Tracking for visits from AI tools",
+        ],
+        "faq": [
+            ("Will you get my business recommended by ChatGPT?", "I can't promise that, and you should be wary of anyone who does. I make sure ChatGPT and the other tools can read your site and find accurate facts about you, then we watch what they say."),
+            ("Is this extra on top of a website?", "No. It's built into every Starter and Business site. If you already have a website, I review it and quote a fixed price for the fixes after a free 20-minute call."),
+            ("How is this different from local SEO?", "They overlap a lot, since both depend on clear pages, consistent listings and reviews. This adds a check that AI crawlers can get in, answer-first writing and tracking of what AI tools actually say about you."),
+            ("How soon will AI tools pick up changes?", "It varies. Crawlers can take anywhere from a few days to a few months, so I recheck the same questions a few weeks after launch and again later."),
+        ],
+        "areas": ["cape-coral-fl", "fort-myers-fl", "sanibel-fl", "bonita-springs-fl"],
+        "posts": ["visitors-ask-chatgpt-lee-county-business", "google-business-profile-lee-county"],
     },
     {
         "slug": "logo-and-branding",

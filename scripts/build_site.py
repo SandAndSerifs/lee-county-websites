@@ -193,7 +193,7 @@ def business_ld():
         "description": "Web design for small businesses in Fort Myers, Cape Coral and the rest of Lee County, Florida: fast, mobile-first websites at fixed prices, plus local SEO, branding and print.",
         "areaServed": [LEE] + [{"@type": "City", "name": a["town"], "containedInPlace": LEE} for a in AREAS],
         "founder": founder_ld(),
-        "knowsAbout": ["Web design", "Website redesign", "Local SEO", "Google Business Profile", "Logo design", "Print design"],
+        "knowsAbout": ["Web design", "Website redesign", "Local SEO", "Google Business Profile", "AI search visibility", "Structured data", "Logo design", "Print design"],
         "priceRange": "$500 to $1,500+",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -467,6 +467,8 @@ HOME_FAQ = [
      "Yes: Fort Myers, Cape Coral, Bonita Springs, Estero, Lehigh Acres, Sanibel, North Fort Myers, Fort Myers Beach and everywhere in between. We work by video call and email, so it doesn't matter which side of the river you're on."),
     ("Will my site show up on Google?",
      "Every site launches with what Google needs: page titles and descriptions, structured data, a sitemap, Search Console and a cleaned-up Google Business Profile. Nobody can promise the top spot, and I won't."),
+    ("Can people find my business through ChatGPT or Google's AI answers?",
+     "They can, and every site I build is set up for it: AI search crawlers are allowed in, each page answers real customer questions in its first lines, and your details match across Google, Bing and your site. No one can promise an AI will recommend you, but it will have accurate facts to work with."),
     ("Do I own the website?",
      "Yes. The domain, the code and the hosting account are in your name from day one. If we stop working together, nothing is held back."),
     ("Is there a monthly fee?",
@@ -673,7 +675,7 @@ def build_services():
 {cta_band()}</div>"""
     lds = [crumbs_ld(trail), {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "url": absu(f'/services/{s["slug"]}/'), "name": s["name"]} for i, s in enumerate(SERVICES)]}]
-    write(path, page(head("Web Design Services in Fort Myers & Cape Coral", "Website design, redesigns, local SEO, logos, print and care plans for small businesses in Fort Myers, Cape Coral and Lee County, FL.", path, lds), body, "/services/"))
+    write(path, page(head("Web Design Services in Fort Myers & Cape Coral", "Website design, redesigns, local SEO, AI search visibility, logos, print and care plans for small businesses in Fort Myers, Cape Coral and Lee County, FL.", path, lds), body, "/services/"))
 
 
 def build_areas():
@@ -766,7 +768,8 @@ def build_pricing():
     extras = [("Logo and brand identity", "Fixed quote", "/services/logo-and-branding/"),
               ("Print pieces (rack cards, door hangers, menus)", "Fixed quote per piece", "/services/print-design/"),
               ("Spanish versions of key pages", "Quoted with the site", "/areas/lehigh-acres-fl/"),
-              ("Local SEO for a site I didn't build", "Fixed quote", "/services/local-seo/")]
+              ("Local SEO for a site I didn't build", "Fixed quote", "/services/local-seo/"),
+              ("AI search review for a site I didn't build", "Fixed quote", "/services/ai-search-visibility/")]
     rows = "".join(f'<tr><th scope="row"><a href="{u}">{esc(n)}</a></th><td>{esc(v)}</td></tr>' for n, v, u in extras)
     body = f"""<div class="wrap">{breadcrumbs(trail)}
 <h1 class="page-title">Website pricing for Lee County small businesses</h1>
@@ -777,7 +780,7 @@ def build_pricing():
     <section class="block"><h2 class="sh">Add-ons and other work</h2><table class="tbl"><tbody>{rows}</tbody></table></section>
     {faq_block(PRICING_FAQ, "Pricing questions")}
   </div>
-  <aside class="col-side">{side_box("Every package includes", ticks(["Phone-first design", "Private preview link", "Structured data and sitemap", "Search Console set up", "Domain, code and hosting in your name"]))}
+  <aside class="col-side">{side_box("Every package includes", ticks(["Phone-first design", "Private preview link", "Structured data and sitemap", "AI search crawlers allowed in", "Search Console set up", "Domain, code and hosting in your name"]))}
   {side_box("Read more", link_list([("What a website costs in Fort Myers and Cape Coral", "/blog/website-cost-fort-myers-cape-coral/")]))}</aside>
 </div>
 {cta_band()}</div>"""

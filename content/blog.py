@@ -7,6 +7,60 @@ and say where a number comes from.
 
 POSTS = [
     {
+        "slug": "visitors-ask-chatgpt-lee-county-business",
+        "title": "When Visitors Ask ChatGPT Where to Go: Getting Your Lee County Business Into AI Answers",
+        "seo_title": "Getting Your Lee County Business Into ChatGPT & AI Answers",
+        "description": "Snowbirds, tourists and new residents now ask ChatGPT and Google's AI where to eat, shop and who to hire. What Fort Myers and Cape Coral businesses can do to be in those answers, and what's a waste of money.",
+        "date": "2026-11-15",
+        "read_minutes": 6,
+        "hue": 185,
+        "tag": "AI search",
+        "answer": "To give your Lee County business a fair shot at appearing in ChatGPT, Google AI Overviews and similar tools, make sure your website doesn't block their crawlers, state plainly on your site what you offer, where, when and roughly for how much, and keep your listings on Google Business Profile, Bing Places and Apple Business saying the same thing. Real reviews and local mentions help too. Nobody can guarantee a mention, and there's no special code that unlocks one.",
+        "body": """
+<p>Every winter, thousands of people arrive in Southwest Florida who don't know the area yet. They used to ask the front desk or a neighbor where to eat, who cleans gutters or which marina rents kayaks. More and more, they ask ChatGPT, or they read the AI summary at the top of Google. New residents settling into Cape Coral and Lehigh Acres do the same when they need a plumber or a vet.</p>
+<p>So it's worth asking: when someone types \"best breakfast on Fort Myers Beach\" or \"who installs impact windows in Bonita Springs\" into an AI tool, does your business come up? And if it does, is the information right?</p>
+
+<h2>Where do AI tools get their information about local businesses?</h2>
+<p>Mostly from the same places a careful person would look: business websites, Google Business Profiles and other listings, review sites, and local articles or directories. The tools search the web, read what they find and summarize it. None of them publishes a complete recipe for who gets mentioned, so anyone claiming to know the formula is guessing.</p>
+<p>Google is the most open about it. Its guidance for site owners says AI Overviews and AI Mode don't need anything special: a page that can appear in regular Google results with a snippet can be used in those features too. That means the basics of being findable on Google still carry most of the weight.</p>
+
+<h2>Is my website blocking AI tools without me knowing?</h2>
+<p>It's possible, and it's the first thing I check. Each AI company sends its own crawler, a program that reads web pages. If your site's robots.txt file or your hosting's security settings turn that crawler away, that tool can't read your pages. OpenAI says plainly that sites opting out of its search crawler won't appear in ChatGPT search answers.</p>
+<p>Some web hosts and security services now block AI crawlers by default, and many builder templates were set up before any of this mattered. If you're not sure, ask whoever manages your site to check, or <a href="/contact/">send me your address</a> and I'll look.</p>
+<p>One distinction worth knowing: some crawlers collect pages to train AI models, and others fetch pages to answer live questions. You can block the first kind and still allow the second. For a local business that wants customers, allowing the search crawlers is usually the right call.</p>
+
+<h2>What should my website say?</h2>
+<p>Think about what a visitor asks before choosing you, then answer it on the page in plain sentences:</p>
+<ul>
+<li><strong>What exactly you do.</strong> \"Charter fishing trips out of Fort Myers Beach for up to six people\" is quotable. \"Unforgettable experiences on the water\" isn't.</li>
+<li><strong>Where you work.</strong> Name the towns and islands. If you cover Sanibel but not Pine Island, say so.</li>
+<li><strong>When you're open, including the season.</strong> If you close Mondays in summer or open later in August, put it on the site and on Google.</li>
+<li><strong>Roughly what it costs.</strong> A starting price or a range gives the tool something concrete. \"Call for pricing\" leaves it with nothing to say.</li>
+<li><strong>Languages.</strong> If you serve customers in Spanish or Portuguese, say so, and consider real pages in those languages.</li>
+</ul>
+<p>Put the answer first on each page, then the detail. That helps people skimming on a phone, and it's the sentence AI tools are most likely to pick up.</p>
+
+<h2>Do listings and reviews matter for AI answers?</h2>
+<p>Yes. Your website is one source; the tools also read your <a href="/blog/google-business-profile-lee-county/">Google Business Profile</a>, Bing Places (which feeds Microsoft's Copilot), Apple Business (which feeds Apple Maps), review sites and local directories. When those disagree about your hours or phone number, the AI may pick the wrong one. Spend an hour making them all match.</p>
+<p>Reviews and local mentions are the part you can't shortcut. A write-up in a local paper, a listing with your chamber of commerce or a mention from a partner business are all signals that you're real and well regarded. Ask happy customers for reviews regularly, not just once.</p>
+
+<h2>What about storms and seasonal changes?</h2>
+<p>This is where Lee County is different. After a hurricane, or when you switch to summer hours, AI tools may keep repeating your old details for a while. Update your website and Google Business Profile the same day, so the most current information is out there when the tools look again. My <a href="/blog/hurricane-season-website-checklist/">hurricane season checklist</a> covers the steps.</p>
+
+<h2>What's not worth paying for?</h2>
+<ul>
+<li>Anyone promising a guaranteed spot in ChatGPT or Google's AI answers.</li>
+<li>Hundreds of AI-written pages targeting every town and phrase. Google's spam policies specifically cover content mass-produced to manipulate search, and it tends to backfire.</li>
+<li>Paying for placement in \"top 10\" list articles that exist only to sell spots.</li>
+<li>Treating an llms.txt file as a fix. It's a proposed summary file for AI tools; it does no harm, but a 2026 Ahrefs study found almost none of them are ever requested by AI crawlers.</li>
+</ul>
+
+<h2>How can I tell if it's working?</h2>
+<p>Ask the tools yourself every couple of months, using the questions a visitor would ask, and note what comes back. In your analytics, look for visits from chatgpt.com, perplexity.ai and gemini.google.com; ChatGPT tags the links it sends, so those are easy to spot. And ask new customers how they heard about you.</p>
+<p>Every site I build is set up for this from day one. If you'd like help with a site you already have, my <a href="/services/ai-search-visibility/">AI search visibility</a> service covers the review and the fixes for businesses in <a href="/areas/fort-myers-fl/">Fort Myers</a>, <a href="/areas/cape-coral-fl/">Cape Coral</a> and across Lee County.</p>
+""",
+    },
+    {
         "slug": "hurricane-season-website-checklist",
         "title": "Hurricane Season Website Checklist for Lee County Businesses",
         "seo_title": "Hurricane Season Website Checklist for Small Businesses",
