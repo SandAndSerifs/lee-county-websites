@@ -799,12 +799,12 @@ def demo_page(smp, d, slug, title, body, desc):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(full)} (sample design)</title>
-<meta name="description" content="{esc(desc)} A sample website design by {esc(NAME)}.">
+<title>{esc(full)}</title>
+<meta name="description" content="{esc(desc)}">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{esc(full)} (sample design)">
-<meta property="og:description" content="A sample {esc(kind_lc(smp))} website by {esc(NAME)}. Click through it on your phone.">
+<meta property="og:title" content="{esc(full)}">
+<meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{absu(cur)}">
 <meta property="og:image" content="{absu(f"/assets/img/samples/{i}-1280.webp")}">
 <meta name="twitter:card" content="summary_large_image">
@@ -814,7 +814,6 @@ def demo_page(smp, d, slug, title, body, desc):
 {tracking_tags()}
 </head>
 <body class="d d-{i}">
-<div class="d-bar"><p><b>Sample design</b> <span>by {esc(NAME)}</span></p><p><a href="/samples/">All samples</a><a href="/contact/">Get a site like this</a></p></div>
 <header class="d-head"><div class="d-in d-head-in">
   <a class="d-logo" href="{base}"><b class="d-mark" aria-hidden="true">{esc(initial)}</b>{esc(smp["name"])}</a>
   <nav class="d-nav" aria-label="Main">{nav}</nav>
@@ -830,7 +829,7 @@ def demo_page(smp, d, slug, title, body, desc):
   <div><h2>Contact</h2><p><a href="{tel(smp["phone"])}">{esc(smp["phone"])}</a><br><a href="mailto:{esc(d["email"])}">{esc(d["email"])}</a></p><p>{esc(d["hours"])}</p></div>
   <div><h2>Find us</h2><p>{esc(d["area"])}</p></div>
   <div><h2>Pages</h2><ul>{foot_links}<li><a href="{base}{act_slug}/">{esc(act_label)}</a></li></ul></div>
-</div><p class="d-in d-credit">Sample website design by <a href="/">{esc(NAME)}</a>. {esc(smp["name"])} is not a real business.</p></footer>
+</div><p class="d-in d-credit">Website by <a href="/">{esc(NAME)}</a></p></footer>
 <a class="d-call" href="{tel(smp["phone"])}">Call {esc(smp["phone"])}</a>
 <script src="/assets/js/demo.js" defer></script>
 </body>
