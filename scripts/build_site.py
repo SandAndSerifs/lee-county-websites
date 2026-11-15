@@ -95,8 +95,13 @@ def photo(sample_id, alt, sizes="(max-width: 900px) 100vw, 60vw", eager=False, c
             f'sizes="{sizes}" width="1280" height="720" alt="{esc(alt)}" {load} decoding="async">')
 
 
+def kind_lc(smp):
+    k = smp["kind"]
+    return k if len(k) > 1 and not k[1].islower() else k[0].lower() + k[1:]
+
+
 def mock_caption(smp):
-    return f'<figcaption>Sample design: {esc(smp["kind"].lower())} website, shown on a laptop and a phone.</figcaption>'
+    return f'<figcaption>Sample design: {esc(kind_lc(smp))} website, shown on a laptop and a phone.</figcaption>'
 
 
 def site_mock(smp, sizes="(max-width: 900px) 100vw, 50vw", eager=False):
@@ -105,7 +110,7 @@ def site_mock(smp, sizes="(max-width: 900px) 100vw, 50vw", eager=False):
     one text description for screen readers."""
     i = smp["id"]
     initial = smp["name"][0]
-    label = f'Sample website design for a {smp["kind"].lower()} business in {smp["town"]}, shown on a laptop and a phone'
+    label = f'Sample {kind_lc(smp)} website design for {smp["town"]}, shown on a laptop and a phone'
     nav = "".join(f"<span>{esc(n)}</span>" for n in smp["nav"])
     cards = "".join(f'<div class="ms-card"><p class="ms-ct">{esc(t)}</p><p class="ms-cd">{esc(d)}</p><p class="ms-cp">{esc(pr)}</p></div>'
                     for t, d, pr in smp["cards"])
