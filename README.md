@@ -2,6 +2,8 @@
 
 Marketing site for Lee County Websites (leecountywebsites.com): fixed-price websites for small businesses in Fort Myers, Cape Coral and the rest of Lee County, Florida, by Daniel of Sand And Serifs.
 
+Live at https://leecountywebsites.com once Cloudflare Workers Builds deploys `main`.
+
 Dark storefront look: deep navy and blue-gray panels, bright blue accents, a featured carousel of sample builds, capsule cards in scrolling rows, and a tabbed list with a hover preview. Plain HTML, CSS and JavaScript, built by a small Python script, deployed on Cloudflare Workers with static assets.
 
 ## What's in the repo
