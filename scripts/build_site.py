@@ -107,7 +107,7 @@ def kind_lc(smp):
 
 def mock_caption(smp):
     return (f'<figcaption class="mk-cap"><span>Sample design: {esc(kind_lc(smp))} website</span>'
-            f'<a class="btn btn-line btn-sm" href="/samples/{smp["id"]}/">View the live site<span class="sr"> ({esc(kind_lc(smp))})</span> &rarr;</a></figcaption>')
+            f'<a class="btn btn-line btn-sm" href="/samples/{smp["id"]}/">View the live site<span class="sr"> ({esc(kind_lc(smp))})</span>&nbsp;&rarr;</a></figcaption>')
 
 
 def sample_cards(tag="h2", sizes="(max-width: 760px) 90vw, 520px"):

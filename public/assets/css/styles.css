@@ -401,3 +401,4 @@ figcaption.mk-cap .btn:hover { color: var(--teal); }
 .sample-grid-home h3 a { color: var(--ink); text-decoration: none; }
 .sample-grid-home h3 a:hover { color: var(--teal); }
 @media (max-width: 1120px) and (min-width: 821px) { .gh-nav { gap: 18px; } .gh-in { gap: 16px; } }
+.sample-card .mk-cap > span:first-child { display: none; }
