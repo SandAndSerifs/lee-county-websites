@@ -19,6 +19,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import types
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
@@ -29,6 +30,8 @@ from areas import AREAS  # noqa: E402
 from blog import POSTS  # noqa: E402
 from samples import SAMPLES  # noqa: E402
 from demos import DEMOS  # noqa: E402
+sys.path.insert(0, str(ROOT / "scripts"))
+import demo_layouts  # noqa: E402
 
 CFG = json.loads((ROOT / "site.config.json").read_text(encoding="utf-8"))
 SITE = CFG["site_url"].rstrip("/")
@@ -843,6 +846,10 @@ def build_demos():
         if i not in DEMOS:
             continue
         d = DEMOS[i]
+        if d.get("layout"):
+            demo_layouts.build(smp, d, types.SimpleNamespace(esc=esc, photo=photo, tel=tel, write=write, absu=absu,
+                                                              tracking_tags=tracking_tags, NAME=NAME))
+            continue
         base = f"/samples/{i}/"
         act_slug, act_label = d["action"]
         hero = f"""<section class="d-hero">{photo(i, "", sizes="100vw", eager=True, cls="d-hero-img")}

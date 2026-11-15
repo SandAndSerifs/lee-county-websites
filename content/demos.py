@@ -76,6 +76,9 @@ DEMOS = {
                         "button": "Request my date"},
     },
     "hvac": {
+        "layout": "pro",
+        "logo_sub": "A/C repair and installs",
+        "band": "A/C out? We can usually be there today.",
         "email": "service@pelicanrowair.example",
         "hours": "Repairs 7 days a week, 7am to 9pm. Emergency calls after hours.",
         "area": "Fort Myers, Lehigh Acres, Cape Coral, Estero and North Fort Myers.",
@@ -128,6 +131,11 @@ DEMOS = {
                         "button": "Send my request"},
     },
     "coffee": {
+        "layout": "cafe",
+        "logo_name": "Little Spoonbill",
+        "logo_sub": "Coffee + Bakery",
+        "ribbon": "Open every day 7am to 3pm \u00b7 Pastries out of the oven by 7",
+        "headline_html": "Iced coffee <em>&amp;</em> fresh bakes, downtown.",
         "email": "hello@littlespoonbill.example",
         "hours": "Open every day, 7am to 3pm.",
         "area": "In the River District, Fort Myers. Street parking and the nearby city garage.",
@@ -176,6 +184,9 @@ DEMOS = {
                         "button": "Place my order"},
     },
     "cottage": {
+        "layout": "coastal",
+        "logo_name": "Seagrape Lane",
+        "logo_sub": "Cottages \u00b7 Fort Myers Beach",
         "email": "stay@seagrapelane.example",
         "hours": "Check-in 4pm, check-out 10am. Office line 9am to 6pm.",
         "area": "On Estero Island, Fort Myers Beach. A short walk to the sand.",

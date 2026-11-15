@@ -351,30 +351,33 @@ main > .wrap { padding-bottom: 80px; }
   --m-shade: linear-gradient(90deg, rgba(10,30,45,.85), rgba(10,30,45,.35) 70%, rgba(10,30,45,.1));
   --m-shade-v: linear-gradient(0deg, rgba(10,30,45,.85), rgba(10,30,45,0) 70%); }
 .mk-charter .ms-copy .ms-h, .mk-charter .mp-hero .ms-h { font-stretch: 75%; }
-.mk-hvac { --m-bg:#fff; --m-ink:#10243e; --m-dim:#55657a; --m-nav:#fff; --m-navink:#10243e; --m-accent:#1463ff; --m-onaccent:#fff;
-  --m-accentink:#1463ff; --m-btn:#ffc629; --m-onbtn:#10243e; --m-card:#f3f6fb; --m-line:#e3e9f2; --m-kick:#ffd75e; --m-call:#ffc629; --m-oncall:#10243e;
-  --m-body: Figtree, system-ui, sans-serif; --m-head: 800 4cqw/1.02 Figtree, system-ui, sans-serif; --m-case: none; --m-track: -.02em;
-  --m-logo: 800 1.4cqw/1 Figtree, sans-serif; --m-ctitle: 800 1.4cqw/1.1 Figtree, sans-serif;
-  --m-markr: .5cqw; --m-btnr: 3cqw; --m-cardr: 1cqw;
-  --m-shade: linear-gradient(90deg, rgba(16,36,62,.9), rgba(16,36,62,.5) 60%, rgba(16,36,62,.15));
-  --m-shade-v: linear-gradient(0deg, rgba(16,36,62,.9), rgba(16,36,62,0) 70%); }
-.mk-hvac .ms-nav { border-bottom: 1px solid #e8edf4; }
-.mk-coffee { --m-bg:#f6efe4; --m-ink:#3b2417; --m-dim:#7a6152; --m-nav:#f6efe4; --m-navink:#3b2417; --m-accent:#c8553d; --m-onaccent:#fff7ee;
-  --m-accentink:#b4472f; --m-btn:#3b2417; --m-onbtn:#f6efe4; --m-card:#fffaf2; --m-line:#e6d8c4; --m-kick:#f3c9a8; --m-call:#c8553d; --m-oncall:#fff7ee;
-  --m-body: Figtree, system-ui, sans-serif; --m-head: italic 600 4cqw/1.05 Georgia, "Times New Roman", serif; --m-case: none; --m-track: 0;
-  --m-logo: italic 700 1.45cqw/1 Georgia, serif; --m-ctitle: italic 700 1.4cqw/1.1 Georgia, serif;
-  --m-markr: 50%; --m-btnr: 0; --m-cardr: 0;
-  --m-shade: linear-gradient(90deg, rgba(43,24,14,.82), rgba(43,24,14,.35) 65%, rgba(43,24,14,.05));
-  --m-shade-v: linear-gradient(0deg, rgba(43,24,14,.85), rgba(43,24,14,0) 70%); }
-.mk-coffee .ms-btn2 { box-shadow: inset 0 0 0 1.5px #f6efe4; }
-.mk-coffee .ms-copy .ms-btn { background: #f6efe4; color: #3b2417; }
-.mk-cottage { --m-bg:#f4fbf8; --m-ink:#1f3b36; --m-dim:#5a716c; --m-nav:rgba(244,251,248,.96); --m-navink:#1f3b36; --m-accent:#2a9d8f; --m-onaccent:#fff;
-  --m-accentink:#1f7f73; --m-btn:#2a9d8f; --m-onbtn:#fff; --m-card:#fff; --m-line:#d8ebe5; --m-kick:#bff0e6; --m-call:#2a9d8f; --m-oncall:#fff;
-  --m-body: Figtree, system-ui, sans-serif; --m-head: 500 4cqw/1.08 Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif; --m-case: none; --m-track: 0;
-  --m-logo: 600 1.45cqw/1 Palatino, "Palatino Linotype", Georgia, serif; --m-ctitle: 600 1.45cqw/1.1 Palatino, "Palatino Linotype", Georgia, serif;
-  --m-markr: 1.3cqw 1.3cqw 1.3cqw 0; --m-btnr: 3cqw; --m-cardr: 1.4cqw;
-  --m-shade: linear-gradient(90deg, rgba(20,48,44,.75), rgba(20,48,44,.3) 65%, rgba(20,48,44,0));
-  --m-shade-v: linear-gradient(0deg, rgba(20,48,44,.8), rgba(20,48,44,0) 70%); }
+.mk-hvac { --m-bg:#fff; --m-ink:#0a1a33; --m-dim:#4c5d74; --m-nav:#fff; --m-navink:#0a1a33; --m-accent:#19b5fe; --m-onaccent:#0a1a33;
+  --m-accentink:#0784c2; --m-btn:#19b5fe; --m-onbtn:#0a1a33; --m-card:#eef4fa; --m-line:#d6e1ec; --m-kick:#7fd6ff; --m-call:#19b5fe; --m-oncall:#0a1a33;
+  --m-body: Figtree, system-ui, sans-serif; --m-head: 800 4.2cqw/.98 "Arial Narrow", "Roboto Condensed", Impact, sans-serif; --m-case: uppercase; --m-track: 0;
+  --m-logo: 800 1.4cqw/1 "Arial Narrow", Impact, sans-serif; --m-ctitle: 800 1.4cqw/1.05 "Arial Narrow", Impact, sans-serif;
+  --m-markr: 0; --m-btnr: 0; --m-cardr: 0;
+  --m-shade: linear-gradient(90deg, rgba(10,26,51,.96), rgba(10,26,51,.75) 50%, rgba(10,26,51,.1));
+  --m-shade-v: linear-gradient(0deg, rgba(10,26,51,.92), rgba(10,26,51,0) 70%); }
+.mk-hvac .ms-nav { border-bottom: 1px solid #d6e1ec; }
+.mk-hvac .ms-card { border-top: .35cqw solid #0a1a33; }
+.mk-coffee { --m-bg:#f3ead8; --m-ink:#2b1a12; --m-dim:#6e5849; --m-nav:#f3ead8; --m-navink:#2b1a12; --m-accent:#d2603a; --m-onaccent:#fff6e8;
+  --m-accentink:#b84e2b; --m-btn:#d2603a; --m-onbtn:#fff6e8; --m-card:#fbf6ec; --m-line:#2b1a12; --m-kick:#f2c14e; --m-call:#2b1a12; --m-oncall:#f3ead8;
+  --m-body: Figtree, system-ui, sans-serif; --m-head: italic 500 4.2cqw/1 Georgia, "Times New Roman", serif; --m-case: none; --m-track: -.01em;
+  --m-logo: italic 700 1.5cqw/1 Georgia, serif; --m-ctitle: italic 600 1.4cqw/1.1 Georgia, serif;
+  --m-markr: 50%; --m-btnr: 3cqw; --m-cardr: 2cqw 2cqw 2cqw .4cqw;
+  --m-shade: linear-gradient(90deg, rgba(43,26,18,.85), rgba(43,26,18,.4) 65%, rgba(43,26,18,.05));
+  --m-shade-v: linear-gradient(0deg, rgba(43,26,18,.85), rgba(43,26,18,0) 70%); }
+.mk-coffee .ms-nav { border-bottom: .2cqw solid #2b1a12; }
+.mk-coffee .ms-btn { box-shadow: .3cqw .3cqw 0 #2b1a12; }
+.mk-coffee .ms-btn2 { box-shadow: inset 0 0 0 1.5px #f3ead8; }
+.mk-cottage { --m-bg:#f6f1e8; --m-ink:#16324f; --m-dim:#5b6b7a; --m-nav:rgba(246,241,232,.94); --m-navink:#16324f; --m-accent:#16324f; --m-onaccent:#fffdf9;
+  --m-accentink:#4f8f87; --m-btn:#fffdf9; --m-onbtn:#16324f; --m-card:#cfe5e1; --m-line:#d9cfbd; --m-kick:#e9f5f2; --m-call:#16324f; --m-oncall:#fffdf9;
+  --m-body: Figtree, system-ui, sans-serif; --m-head: italic 400 4.4cqw/1 "Cormorant Garamond", Palatino, "Palatino Linotype", Georgia, serif; --m-case: none; --m-track: 0;
+  --m-logo: 500 1.35cqw/1 Palatino, "Palatino Linotype", Georgia, serif; --m-ctitle: italic 400 1.6cqw/1.1 Palatino, "Palatino Linotype", Georgia, serif;
+  --m-markr: 0; --m-btnr: 0; --m-cardr: 0;
+  --m-shade: linear-gradient(90deg, rgba(10,25,40,.6), rgba(10,25,40,.25) 65%, rgba(10,25,40,0));
+  --m-shade-v: linear-gradient(0deg, rgba(10,25,40,.7), rgba(10,25,40,0) 70%); }
+.mk-cottage .ms-logo { letter-spacing: .12em; text-transform: uppercase; }
 
 /* Mockups link to their clickable demo sites */
 .mk-link { display: block; color: inherit; text-decoration: none; transition: transform .2s ease; }
