@@ -27,17 +27,17 @@ SERVICES = [
 <p>If you need an online store, bookings tied into your scheduling software, or a large site, that's a <a href="/pricing/">Custom project</a>. I'll quote it after a short call.</p>
 """),
             ("The two packages", """
-<h3>Starter, $500</h3>
+<h3>The Starter package ($500)</h3>
 <p>A single, well organized page: what you do, the services you offer, your hours, the towns you cover and a contact form that sends each enquiry to your inbox. You give me the words and photos you already have, I shape them into something clear, and you get one round of changes. Plan on about two weeks.</p>
-<h3>Business, $1,500</h3>
-<p>Up to five pages, laid out around the way your customers decide. That usually means a home page, a page for each main service, an about page and a contact or booking page. I interview you for half an hour and write the first draft of the words myself, add a quote or booking form, and set up local search. You get two rounds of design changes and 30 days of fixes after launch. Plan on about four weeks.</p>
+<h3>The Business package ($1,500)</h3>
+<p>Up to five pages, laid out around the way your customers decide. Typically that's a home page, one page per main service, an about page and a page to book or get in touch. I interview you for half an hour and write the first draft of the words myself, add a quote or booking form, and set up local search. Two rounds of design revisions are included, plus a month of fixes once it's live. Plan on about four weeks.</p>
 """),
             ("How the build works", """
-<p>You see the design on a private preview link before anything is final, so there are no surprises at launch. I design in Figma, then write the site by hand and host it on Cloudflare. No page builder, no stack of plugins to keep patched, and pages that open almost instantly on a phone, even on a weak signal at the beach.</p>
+<p>You review the design on a private preview link before we lock anything in, so there are no surprises at launch. I design in Figma, then write the site by hand and host it on Cloudflare. No page builder, no stack of plugins to keep patched, and pages that open almost instantly on a phone, even on a weak signal at the beach.</p>
 <p>Anything you change often, like a menu, seasonal hours or a price list, I set up so you can edit it yourself without calling me.</p>
 """),
             ("Ready for local search on day one", """
-<p>Each page launches with its own title and description, structured data that tells Google and AI assistants your business name, services and the parts of Lee County you cover, a sitemap, and Google Search Console connected so we can watch which searches you start to appear in. I also go through your Google Business Profile with you, since that listing drives most map results. The <a href="/services/local-seo/">local SEO page</a> explains what that involves.</p>
+<p>Each page launches with its own title and description, structured data describing your business, services and the parts of Lee County you cover for Google and AI assistants, a sitemap, and a Search Console connection so we can watch which searches you start to appear in. I also go through your Google Business Profile with you, since that listing drives most map results. The <a href="/services/local-seo/">local SEO page</a> explains what that involves.</p>
 """),
             ("Running costs after launch", """
 <p>Hosting sits on a Cloudflare account in your name. For most small business sites it costs nothing or a few dollars a month. A domain name is typically $10 to $20 a year. A care plan is optional; <a href="/services/website-care-plans/">here's what one covers</a> if you'd rather hand the upkeep to me.</p>
@@ -47,16 +47,16 @@ SERVICES = [
             "Designed for phones first, previewed before launch",
             "Fast pages, even on a weak signal",
             "A contact or quote form that emails you",
-            "Search Console, analytics and a sitemap",
+            "Sitemap, Search Console and analytics",
             "Structured data for Google and AI answers",
             "Readable contrast, headings and alt text",
             "Your domain, code and hosting, in your name",
         ],
         "faq": [
-            ("What does a small business website cost in Fort Myers?", "With me it's $500 for a one-page Starter site or $1,500 for a Business site of up to five pages, at a fixed price. Stores, booking systems and bigger sites get a fixed quote after a free 20-minute call."),
-            ("Do I have to write all the words?", "Not for a Business site. I write the first draft from a half-hour interview and we edit it together. For a Starter site you send what you have and I tidy it up."),
+            ("What does a small business website cost in Fort Myers?", "My Starter site is one page for $500, and my Business site is up to five pages for $1,500, both flat prices. Stores, booking systems and larger builds are priced after a free 20-minute chat, with one number in writing."),
+            ("Do I have to write all the words?", "Not for a Business site. After a half-hour interview I draft the copy, and we edit it side by side. For a Starter site, send me whatever text you've got and I'll polish it."),
             ("Can I change things myself later?", "Yes, for whatever changes often, such as hours, prices or a menu. I set it up during the build and walk you through it at launch."),
-            ("Do you only work in Fort Myers and Cape Coral?", "No. Those are the two biggest places I serve, but I work with businesses anywhere in Lee County and beyond. Everything runs over video calls, email and a shared preview link."),
+            ("Do you only work in Fort Myers and Cape Coral?", "No. Those are the two biggest places I serve, but I work with businesses anywhere in Lee County and beyond. We work over video, email and a private preview link."),
         ],
         "areas": ["fort-myers-fl", "cape-coral-fl", "estero-fl", "lehigh-acres-fl"],
         "posts": ["website-cost-fort-myers-cape-coral", "google-business-profile-lee-county"],
@@ -74,7 +74,7 @@ SERVICES = [
         "lede": "Your old site still brings in some calls, so a redesign shouldn't throw that away. I rebuild what isn't working, keep what is, and make sure Google follows every old page to its new home.",
         "price": "$1,500 for up to 5 pages",
         "time": "About 4 weeks",
-        "answer": "I redesign websites for small businesses in Fort Myers, Cape Coral and across Lee County. A redesign of up to five pages costs $1,500 at a fixed price and takes about four weeks. Before anything changes I record which pages bring you visitors, then point every old address to its replacement so the search traffic you've already earned carries over.",
+        "answer": "I redesign websites for small businesses in Fort Myers, Cape Coral and across Lee County. Redesigning a site of up to five pages is a flat $1,500 and runs about four weeks. Before anything changes I record which pages bring you visitors, then point every old address to its replacement so the search traffic you've already earned carries over.",
         "sections": [
             ("Signs it's time", """
 <ul>
@@ -106,7 +106,7 @@ SERVICES = [
         ],
         "faq": [
             ("Will I lose my Google rankings after a redesign?", "Not if it's handled properly. I keep your best pages at the same addresses where I can and redirect the rest, then watch Search Console after launch and fix anything that slips."),
-            ("How much does a website redesign cost?", "Up to five pages is $1,500 at a fixed price. Bigger sites and stores get a fixed quote after a free 20-minute call."),
+            ("What does a website redesign cost?", "A flat $1,500 covers up to five pages. Larger sites and stores are priced after a free 20-minute chat, with one number in writing."),
             ("Can I keep my domain name and email?", "Yes. Your domain and email stay exactly as they are. Only the website itself changes."),
             ("My site is on Wix. Can you redesign it?", "Yes. I bring across your content and any pages earning traffic, then rebuild the site so it loads faster and you're not tied to a monthly builder subscription."),
         ],
@@ -257,8 +257,8 @@ SERVICES = [
             "A one page usage guide",
         ],
         "faq": [
-            ("How much does a logo cost?", "Brand projects get a fixed quote after a free 20-minute call, based on how many pieces you need. It's often cheaper added to a website project."),
-            ("Do I own the logo?", "Yes. Once the project is paid, the logo and all of its files are yours to use anywhere."),
+            ("How much does a logo cost?", "After a free 20-minute chat I price each brand project as one flat number, depending on how many pieces you need. It's often cheaper added to a website project."),
+            ("Do I own the logo?", "Yes. Once the project is paid, the logo and every file belong to you, to use however you like."),
             ("Can you freshen up my current logo instead?", "Often, yes. If people already know your logo, a careful cleanup can be the better choice. I'll tell you which I'd recommend."),
         ],
         "areas": ["fort-myers-fl", "bonita-springs-fl", "sanibel-fl", "cape-coral-fl"],
@@ -303,7 +303,7 @@ SERVICES = [
             "Editable templates for repeat pieces",
         ],
         "faq": [
-            ("Do you print as well as design?", "I design and prepare the files, then hand them to your printer, or recommend one. You pay the printer directly, so there's no markup from me."),
+            ("Do you print as well as design?", "I design and prepare the files, then hand them to your printer, or recommend one. You settle the print bill with them yourself, so I add no markup."),
             ("How much do rack cards or door hangers cost to design?", "Each piece gets a fixed quote after a quick call. Pieces designed alongside a website or logo usually cost less."),
             ("Can you redo a menu I already have?", "Yes. Send me the current one and I'll redesign it so it's easier to read and easier for you to update next season."),
         ],

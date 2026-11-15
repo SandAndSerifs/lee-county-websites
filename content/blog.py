@@ -112,7 +112,7 @@ POSTS = [
         "read_minutes": 6,
         "hue": 145,
         "tag": "Pricing",
-        "answer": "A small business website can cost anything from a monthly builder subscription you set up yourself to $10,000 or more from an agency. Freelancers usually land in between. My own fixed prices are $500 for a one-page Starter site and $1,500 for a Business site of up to five pages, with custom quotes for stores and booking systems. After launch, budget about $10 to $20 a year for a domain; hosting on Cloudflare is often free.",
+        "answer": "A small business website can cost anything from a monthly builder subscription you set up yourself to $10,000 or more from an agency. Freelancers usually land in between. I charge a flat $500 for a Starter site (one page) and $1,500 for a Business site (up to five pages); stores and booking systems are quoted individually. Once live, set aside roughly $10 to $20 yearly for the domain, and hosting on Cloudflare often costs nothing.",
         "body": """
 <p>Ask around in Fort Myers or Cape Coral what a website costs and you'll hear numbers from \"free\" to \"more than my truck\". Both can be true. Here's how the options break down, what moves the price, and where I fit.</p>
 
@@ -134,13 +134,13 @@ POSTS = [
 </ul>
 
 <h2>Running costs after launch</h2>
-<p>A domain name is usually $10 to $20 a year. Hosting ranges from free to tens of dollars a month depending on the platform. Sites I build run on Cloudflare in your own account, where most small business sites cost nothing or a few dollars a month. Builders bundle hosting into the subscription, so you keep paying as long as the site exists.</p>
+<p>Expect roughly $10 to $20 a year for a domain name. Hosting ranges from free to tens of dollars a month depending on the platform. Sites I build run on Cloudflare in your own account, where most small business sites cost nothing or a few dollars a month. Builders bundle hosting into the subscription, so you keep paying as long as the site exists.</p>
 
 <h2>My prices</h2>
 <ul>
-<li><strong>Starter, $500:</strong> one page, your words tidied up, one round of changes, about two weeks.</li>
-<li><strong>Business, $1,500:</strong> up to five pages, words written with you, a quote or booking form, local search setup, two rounds of changes, about four weeks.</li>
-<li><strong>Custom:</strong> stores, booking systems, bigger sites and brand work, quoted at a fixed price after a short call.</li>
+<li><strong>Starter ($500):</strong> a single page built from your own words, polished by me, with one revision round. Roughly two weeks.</li>
+<li><strong>Business ($1,500):</strong> as many as five pages, copy we write together, a booking or quote form, local search setup and two revision rounds. Roughly four weeks.</li>
+<li><strong>Custom:</strong> stores, booking systems, bigger sites and brand work, priced as one flat number after a short chat.</li>
 </ul>
 <p>Half is due when we start and half at launch. You own the domain, code and hosting from day one. The <a href="/pricing/">pricing page</a> has the details.</p>
 
@@ -243,14 +243,14 @@ POSTS = [
     },
     {
         "slug": "website-redesign-keep-google-rankings",
-        "title": "How to Redesign Your Website Without Losing Your Google Rankings",
+        "title": "Redesigning Your Website and Keeping Your Google Rankings",
         "seo_title": "Redesign Your Website Without Losing Google Rankings",
         "description": "A plain guide for small business owners: how to redesign a website while keeping the search traffic and calls you already get.",
         "date": "2026-11-15",
         "read_minutes": 5,
         "hue": 350,
         "tag": "Redesign",
-        "answer": "To redesign a website without losing Google rankings, record which pages and searches bring you visitors before you change anything, keep your best pages at the same addresses where possible, set permanent 301 redirects from every old address to its new one, keep the content that's earning traffic, and watch Search Console closely for a month after launch to fix errors quickly.",
+        "answer": "The way to keep your Google rankings through a redesign is to record which pages and searches bring you visitors before you change anything, keep your best pages at the same addresses where possible, set permanent 301 redirects from every old address to its new one, keep the content that's earning traffic, and watch Search Console closely for a month after launch to fix errors quickly.",
         "body": """
 <p>A redesign should make your site better at bringing in work, not reset it to zero. The rankings you have now took time to earn. Most of the damage people blame on a redesign comes from a handful of avoidable mistakes. Here's how to avoid them.</p>
 

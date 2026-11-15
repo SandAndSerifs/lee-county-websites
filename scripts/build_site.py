@@ -413,7 +413,7 @@ def cta_band(topic=""):
     mail = f' or email <a href="mailto:{esc(CFG["email"])}">{esc(CFG["email"])}</a>' if CFG.get("email") else ""
     return f"""<section class="band"><div>
   <h2>Tell me about your business</h2>
-  <p>A free 20-minute video call, then a written plan and a fixed price within two days. Send the form{mail}.</p>
+  <p>A free 20-minute video chat, then a written plan with one flat price inside two days. Send the form{mail}.</p>
 </div><a class="btn btn-go btn-lg" href="/contact/{t}">Start a project</a></section>"""
 
 
@@ -460,7 +460,7 @@ def about_card():
 
 HOME_FAQ = [
     ("How much does a website cost in Fort Myers or Cape Coral?",
-     "With me, a one-page Starter site is $500 and a Business site of up to five pages is $1,500, both at a fixed price. Online stores, booking systems and larger sites get a fixed quote after a free 20-minute call."),
+     "Two flat prices cover most businesses: $500 for a Starter site (one page) and $1,500 for a Business site (up to five pages). Online stores, booking systems and larger builds get one written price after a free 20-minute chat."),
     ("How long does a website take?",
      "About two weeks for a Starter site and about four weeks for a Business site, counted from when I have your photos and answers."),
     ("Do you work with businesses all over Lee County?",
@@ -470,9 +470,9 @@ HOME_FAQ = [
     ("Can people find my business through ChatGPT or Google's AI answers?",
      "They can, and every site I build is set up for it: AI search crawlers are allowed in, each page answers real customer questions in its first lines, and your details match across Google, Bing and your site. No one can promise an AI will recommend you, but it will have accurate facts to work with."),
     ("Do I own the website?",
-     "Yes. The domain, the code and the hosting account are in your name from day one. If we stop working together, nothing is held back."),
+     "Yes. Your domain, code and hosting account are registered to you from the start. If you ever move on, you take everything with you."),
     ("Is there a monthly fee?",
-     "No. A domain is usually $10 to $20 a year and hosting on Cloudflare is often free. A care plan is optional, for people who'd rather hand off updates."),
+     "No. Plan on roughly $10 to $20 a year for the domain, and Cloudflare hosting often costs nothing. A care plan is optional, for people who'd rather hand off updates."),
     ("Can my site be in Spanish too?",
      "Yes. I can build Spanish versions of your key pages, written as real pages that Google can show to people searching in Spanish."),
     ("What about hurricane season?",
@@ -744,12 +744,12 @@ def build_blog():
 
 
 PRICING_FAQ = [
-    ("Is the price really fixed?", "Yes. After a free 20-minute call you get a written plan and one price. That's what you pay. If you later want something outside the plan, I quote it before doing any of it."),
-    ("How do I pay?", "Half when we start and half at launch, by invoice. Care plans are billed monthly."),
-    ("Who writes the words?", "For a Business site, I draft them from a half-hour interview and we edit together. For a Starter site, you send what you have and I tidy it up."),
-    ("What will I pay each year after launch?", "Usually $10 to $20 for your domain. Hosting runs on a Cloudflare account in your name and is free or a few dollars a month for most small business sites."),
-    ("What if I need more than five pages?", "That's a Custom project. You get a written plan and a fixed quote, usually within two days of our call."),
-    ("Do I own the site?", "Yes. Domain, code and hosting are in your name from day one, and I hand over every login at launch."),
+    ("Is the price really fixed?", "Yes. A free 20-minute chat, then one written price for the whole job, and that's the bill. Anything new you ask for later gets priced before I touch it."),
+    ("How do I pay?", "Two invoices: 50% to start and 50% when the site goes live. Care plans are invoiced each month."),
+    ("Who writes the words?", "On a Business site, I draft the copy after a half-hour interview, then we refine it together. On a Starter site, send me whatever text you've got and I'll polish it."),
+    ("What will I pay each year after launch?", "Roughly $10 to $20 for the domain. Hosting lives on a Cloudflare account registered to you, and most small business sites pay nothing or a couple of dollars monthly."),
+    ("What if my site needs more than five pages?", "Then it's a Custom project: a written plan and one flat price, normally within two days of our chat."),
+    ("Who owns the finished site?", "You do. The domain, code and hosting are registered to you from the start, and every login is yours on launch day."),
 ]
 
 
@@ -799,7 +799,7 @@ def build_contact():
   <div class="col-main"><div class="panel">{contact_form()}</div></div>
   <aside class="col-side">
     {side_box("Other ways to reach me", '<ul class="links plain">' + mail + '<li><b>Hours</b>Monday to Friday, Eastern time</li></ul>')}
-    {side_box("What happens next", '<ol class="next"><li>I reply within a business day.</li><li>We talk for 20 minutes by video.</li><li>You get a written plan and fixed price within two days.</li><li>Half to start, and the build begins.</li></ol>')}
+    {side_box("What happens next", '<ol class="next"><li>You hear back from me within one business day.</li><li>We have a 20-minute video chat.</li><li>A written plan with one flat price arrives inside two days.</li><li>You pay the first half and the build begins.</li></ol>')}
   </aside>
 </div></div>"""
     write(path, page(head("Contact: Start Your Website Project", "Contact Lee County Websites about a website, redesign, local SEO, logo or print project for your Fort Myers, Cape Coral or Lee County business.", path, [crumbs_ld(trail)]), body, "/contact/"))
@@ -811,15 +811,15 @@ def build_privacy():
     body = f"""<div class="wrap">{breadcrumbs(trail)}
 <h1 class="page-title">Privacy</h1>
 <div class="cols"><div class="col-main"><div class="prose panel">
-<p>This page explains what this website collects and what happens to it. In short: only what you send me, plus anonymous visit statistics if they're switched on.</p>
-<h2>The contact form</h2>
-<p>When you send the form, I receive what you typed: your name, email, business, website and message. It's delivered to my inbox by an email service called Resend. I use it only to reply to you and to quote for your project. I don't sell it, share it for marketing or add you to a mailing list.</p>
-<h2>Visit statistics</h2>
-<p>This site may use Google Tag Manager to load Google Analytics, which counts visits and shows which pages are useful. Google Analytics sets cookies and receives information such as the pages you view, your approximate location and the kind of device you use. I don't use it to identify you. You can block it with your browser's privacy settings.</p>
-<h2>Hosting</h2>
-<p>The site is hosted on Cloudflare, which processes basic request information, such as IP addresses, to deliver pages and protect the site from abuse.</p>
-<h2>Questions</h2>
-<p>To ask what I hold about you, or to have it deleted, <a href="/contact/">get in touch</a>.</p>
+<p>Here's everything this site gathers about visitors and where it goes. The short version: whatever you choose to send through the form, and, when analytics is on, anonymous numbers about visits.</p>
+<h2>Messages you send</h2>
+<p>The contact form passes along the details you enter (name, email, business name, website and your message) to my inbox through Resend, an email delivery service. I read them so I can answer you and price your project, and that's all. Your details are never sold, never passed to marketers and never added to a newsletter.</p>
+<h2>Analytics</h2>
+<p>Google Tag Manager may load Google Analytics here so I can see how many people visit and which pages they find helpful. Analytics uses cookies and collects things like the pages viewed, a rough location and your device type. I look at the totals, not at individuals, and your browser's privacy controls can switch it off.</p>
+<h2>Where the site runs</h2>
+<p>Cloudflare serves these pages. To do that and to keep out attacks, it handles basic connection details such as your IP address.</p>
+<h2>Your information</h2>
+<p>If you'd like to know what I have on file about you, or want it removed, <a href="/contact/">send me a message</a>.</p>
 <p class="post-meta">Last updated {fmt_date(PRIVACY_UPDATED)}.</p>
 </div></div></div></div>"""
     write(path, page(head("Privacy", "What the Lee County Websites site collects and how it's used: the contact form, visit statistics and hosting.", path, [crumbs_ld(trail)]), body))
@@ -857,7 +857,7 @@ def build_seo_files():
         f"> {NAME} builds fixed-price websites for small businesses in Fort Myers, Cape Coral and the rest of Lee County, Florida. "
         f"Every site is designed and hand-built by {OWNER}, a Florida-based web and graphic designer, and also covers local SEO, logos and print.", "",
         "Key facts:",
-        "- Prices (fixed): Starter one-page website $500 (about 2 weeks); Business website up to five pages $1,500 (about 4 weeks); stores, booking systems, bigger sites and brand work get a fixed quote after a free 20-minute call.",
+        "- Prices (fixed): Starter one-page website $500 (about 2 weeks); Business website up to five pages $1,500 (about 4 weeks); stores, booking systems, bigger sites and brand work are priced as one flat number after a free 20-minute chat.",
         "- Payment: half at the start, half at launch. Care plans are optional.",
         "- Clients own their domain, code and hosting. Sites are hosted on Cloudflare.",
         "- Areas served: " + ", ".join(a["place"] for a in AREAS) + ", and the rest of Lee County. Projects run by video call and email.",
