@@ -1,0 +1,14 @@
+{
+  "name": "lee-county-websites",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lee County Websites marketing site, deployed on Cloudflare Workers.",
+  "scripts": {
+    "build": "python3 scripts/build_site.py",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

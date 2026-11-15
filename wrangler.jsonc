@@ -1,0 +1,25 @@
+{
+  // Cloudflare Workers config: static assets from ./public plus a small worker for the contact form.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lee-county-websites",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash"
+  },
+  "routes": [
+    { "pattern": "leecountywebsites.com", "custom_domain": true },
+    { "pattern": "www.leecountywebsites.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true },
+  // Keeps variables and secrets set in the Cloudflare dashboard when deploying from GitHub.
+  "keep_vars": true,
+  "vars": {
+    // Contact form email. The Resend API key is a secret set in the dashboard (RESEND_API_KEY).
+    // Sends from the sandandserifs.com domain, which is already verified in Resend.
+    "CONTACT_TO": "info@sandandserifs.com",
+    "CONTACT_FROM": "Lee County Websites <hello@sandandserifs.com>"
+  }
+}

@@ -1,0 +1,39 @@
+# Lee County Websites
+
+> Lee County Websites builds fixed-price websites for small businesses in Fort Myers, Cape Coral and the rest of Lee County, Florida. Every site is designed and hand-built by Daniel, a Florida-based web and graphic designer, and also covers local SEO, logos and print.
+
+Key facts:
+- Prices (fixed): Starter one-page website $500 (about 2 weeks); Business website up to five pages $1,500 (about 4 weeks); stores, booking systems, bigger sites and brand work get a fixed quote after a free 20-minute call.
+- Payment: half at the start, half at launch. Care plans are optional.
+- Clients own their domain, code and hosting. Sites are hosted on Cloudflare.
+- Areas served: Fort Myers, FL, Cape Coral, FL, Bonita Springs, FL, Estero, FL, Lehigh Acres, FL, Sanibel, FL, North Fort Myers, FL, Fort Myers Beach, FL, and the rest of Lee County. Projects run by video call and email.
+- Contact: https://leecountywebsites.com/contact/ or info@sandandserifs.com
+
+## Services
+- [Small business website design](https://leecountywebsites.com/services/small-business-website-design/): I build websites for small businesses in Fort Myers, Cape Coral and the rest of Lee County.
+- [Website redesign](https://leecountywebsites.com/services/website-redesign/): I redesign websites for small businesses in Fort Myers, Cape Coral and across Lee County.
+- [Local SEO and Google Business Profile](https://leecountywebsites.com/services/local-seo/): Local SEO means making your business easy for Google Maps, regular search results and AI assistants to find and trust when someone nearby looks for what you sell.
+- [Logo and brand identity](https://leecountywebsites.com/services/logo-and-branding/): I design logos and small brand identities for businesses in Fort Myers, Cape Coral and the rest of Lee County.
+- [Print design](https://leecountywebsites.com/services/print-design/): I design print pieces for small businesses in Fort Myers, Cape Coral and around Lee County: rack cards, door hangers, flyers, menus, postcards, business cards and yard signs.
+- [Website care plans](https://leecountywebsites.com/services/website-care-plans/): My care plans are an optional monthly service for owners who would rather not touch their own website.
+
+## Towns
+- [Fort Myers, FL](https://leecountywebsites.com/areas/fort-myers-fl/)
+- [Cape Coral, FL](https://leecountywebsites.com/areas/cape-coral-fl/)
+- [Bonita Springs, FL](https://leecountywebsites.com/areas/bonita-springs-fl/)
+- [Estero, FL](https://leecountywebsites.com/areas/estero-fl/)
+- [Lehigh Acres, FL](https://leecountywebsites.com/areas/lehigh-acres-fl/)
+- [Sanibel, FL](https://leecountywebsites.com/areas/sanibel-fl/)
+- [North Fort Myers, FL](https://leecountywebsites.com/areas/north-fort-myers-fl/)
+- [Fort Myers Beach, FL](https://leecountywebsites.com/areas/fort-myers-beach-fl/)
+
+## Blog
+- [Hurricane Season Website Checklist for Lee County Businesses](https://leecountywebsites.com/blog/hurricane-season-website-checklist/): Before hurricane season, make sure at least two people can update your website and Google Business Profile, prepare a short closure notice you can post in seconds, and back up your site.
+- [What Does a Small Business Website Cost in Fort Myers and Cape Coral?](https://leecountywebsites.com/blog/website-cost-fort-myers-cape-coral/): A small business website can cost anything from a monthly builder subscription you set up yourself to $10,000 or more from an agency.
+- [Running a Seasonal Business Website in Southwest Florida](https://leecountywebsites.com/blog/seasonal-business-website-southwest-florida/): A seasonal business in Southwest Florida should update its website and Google Business Profile twice a year: before the winter rush, with longer hours, booking details and visitor information, and before the summer slowdown, with reduced hours and offers aimed at year round residents.
+- [Google Business Profile Checklist for Lee County Small Businesses](https://leecountywebsites.com/blog/google-business-profile-lee-county/): To show up in Lee County map results, claim and verify your Google Business Profile, choose the most specific primary category, set an accurate service area or address, keep regular and special hours current, list your services, add real photos, and match your business name, phone and address to your website exactly.
+- [How to Redesign Your Website Without Losing Your Google Rankings](https://leecountywebsites.com/blog/website-redesign-keep-google-rankings/): To redesign a website without losing Google rankings, record which pages and searches bring you visitors before you change anything, keep your best pages at the same addresses where possible, set permanent 301 redirects from every old address to its new one, keep the content that's earning traffic, and watch Search Console closely for a month after launch to fix errors quickly..
+
+## Optional
+- [Pricing](https://leecountywebsites.com/pricing/)
+- [Contact](https://leecountywebsites.com/contact/)
