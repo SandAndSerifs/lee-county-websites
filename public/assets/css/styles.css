@@ -390,3 +390,14 @@ figcaption a { color: var(--teal); font-weight: 600; }
 .sample-card h2 a:hover { color: var(--teal); }
 .sample-card p { color: var(--text); margin: 0; }
 .sample-fig { margin: 0; }
+
+/* Example sites: a clear button under each mockup */
+.btn-sm { font-size: 14px; padding: 10px 16px; }
+figcaption.mk-cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-top: 14px; }
+figcaption.mk-cap .btn { color: var(--ink); }
+figcaption.mk-cap .btn:hover { color: var(--teal); }
+.sample-grid-home { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 40px 36px; margin: 28px 0 32px; }
+.sample-grid-home h3 { font-size: 20px; margin: 16px 0 4px; }
+.sample-grid-home h3 a { color: var(--ink); text-decoration: none; }
+.sample-grid-home h3 a:hover { color: var(--teal); }
+@media (max-width: 1120px) and (min-width: 821px) { .gh-nav { gap: 18px; } .gh-in { gap: 16px; } }

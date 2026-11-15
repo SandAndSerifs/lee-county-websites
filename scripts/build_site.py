@@ -106,8 +106,15 @@ def kind_lc(smp):
 
 
 def mock_caption(smp):
-    return (f'<figcaption>Sample design: {esc(kind_lc(smp))} website. '
-            f'<a href="/samples/{smp["id"]}/">Click through the sample site</a></figcaption>')
+    return (f'<figcaption class="mk-cap"><span>Sample design: {esc(kind_lc(smp))} website</span>'
+            f'<a class="btn btn-line btn-sm" href="/samples/{smp["id"]}/">View the live site<span class="sr"> ({esc(kind_lc(smp))})</span> &rarr;</a></figcaption>')
+
+
+def sample_cards(tag="h2", sizes="(max-width: 760px) 90vw, 520px"):
+    return "".join(
+        f"""<article class="sample-card">{mock_figure(smp, "sample-fig", sizes)}
+  <{tag}><a href="/samples/{smp["id"]}/">{esc(smp["kind"])}</a></{tag}><p>{esc(smp["note"])}</p></article>"""
+        for smp in SAMPLES if smp["id"] in DEMOS)
 
 
 def mock_figure(smp, cls, sizes, eager=False):
@@ -313,7 +320,7 @@ def head(title, desc, path, lds=(), og_type="website", noindex=False, image=None
 
 # ------------------------------------------------------------------ chrome
 
-NAV = [("Services", "/services/"), ("Pricing", "/pricing/"), ("Towns", "/areas/"), ("Blog", "/blog/")]
+NAV = [("Services", "/services/"), ("Examples", "/samples/"), ("Pricing", "/pricing/"), ("Towns", "/areas/"), ("Blog", "/blog/")]
 
 
 def header(active=""):
@@ -503,12 +510,13 @@ def build_index():
     <p class="eyebrow">Web design in Lee County, Florida</p>
     <h1>Websites for Fort Myers and Cape Coral small businesses</h1>
     <p class="lede">Clear, fast websites at a fixed price: one page for $500, or up to five pages for $1,500. Built by hand, set up for Google, and yours from day one.</p>
-    <p class="hero-act"><a class="btn btn-go btn-lg" href="/contact/">Get a free quote</a><a class="text-link" href="/pricing/">See pricing</a></p>
+    <p class="hero-act"><a class="btn btn-go btn-lg" href="/contact/">Get a free quote</a><a class="text-link" href="/samples/">See example sites</a></p>
   </div>
   {mock_figure(hero, "hero-shot", "(max-width: 900px) 85vw, 40vw", eager=True)}
 </div></section>
 <div class="wrap">
 <section class="sec"><h2>What I can do for you</h2><p class="sec-lede">Everything a small business needs to be found and chosen online, at a price agreed before any work starts.</p>{svc}</section>
+<section class="sec" id="examples"><h2>Example sites you can click through</h2><p class="sec-lede">Four sample sites built for the kinds of businesses I work with. Open any of them on your phone or computer and tap around.</p><div class="sample-grid sample-grid-home">{sample_cards("h3", "(max-width: 760px) 90vw, 560px")}</div><p><a class="btn btn-go" href="/samples/">See all example sites</a></p></section>
 <section class="sec"><h2>Simple, fixed pricing</h2><ul class="pk">{pk}</ul><p><a class="text-link" href="/pricing/">Full pricing and what's included</a></p></section>
 {steps()}
 <section class="sec"><h2>Serving all of Lee County</h2><p class="sec-lede">I work with businesses across the county by video call and email. Each town page covers how people there search.</p><ul class="towns">{towns}</ul></section>
@@ -867,17 +875,14 @@ def build_demos():
         body = top + f'<section class="d-sec d-formwrap">{demo_form(ap["form"], ap["button"], smp)}{side}</section>'
         write(f"{base}{act_slug}/", demo_page(smp, d, act_slug, ap["title"], body, ap["intro"]))
 
-    cards = "".join(
-        f"""<article class="sample-card">{mock_figure(smp, "sample-fig", "(max-width: 760px) 90vw, 520px")}
-  <h2><a href="/samples/{smp["id"]}/">{esc(smp["kind"])}</a></h2><p>{esc(smp["note"])}</p></article>"""
-        for smp in SAMPLES if smp["id"] in DEMOS)
+    cards = sample_cards("h2")
     trail = [("Home", "/"), ("Sample designs", "/samples/")]
     body = f"""<div class="wrap">{breadcrumbs(trail)}
 <header class="page-head"><h1>Sample website designs</h1>
 <p class="lede">Four sample sites for the kinds of businesses I build for in Lee County. Each one is a working site you can click through on your phone or computer. The businesses aren't real.</p></header>
 <div class="sample-grid">{cards}</div>
 {cta_band()}</div>"""
-    write("/samples/", page(head("Sample website designs", "Click through four sample small business websites designed by Lee County Websites.", "/samples/", noindex=True), body))
+    write("/samples/", page(head("Sample website designs", "Click through four sample small business websites designed by Lee County Websites.", "/samples/", noindex=True), body, "/samples/"))
 
 
 # ------------------------------------------------------------------ SEO files
