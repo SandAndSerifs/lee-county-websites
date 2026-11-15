@@ -10,7 +10,7 @@ POSTS = [
         "slug": "visitors-ask-chatgpt-lee-county-business",
         "title": "When Visitors Ask ChatGPT Where to Go: Getting Your Lee County Business Into AI Answers",
         "seo_title": "Getting Your Lee County Business Into ChatGPT & AI Answers",
-        "description": "Snowbirds, tourists and new residents now ask ChatGPT and Google's AI where to eat, shop and who to hire. What Fort Myers and Cape Coral businesses can do to be in those answers, and what's a waste of money.",
+        "description": "Snowbirds and tourists now ask ChatGPT who to hire and where to eat. What Fort Myers and Cape Coral businesses can do to show up in those answers, and what to skip.",
         "date": "2026-11-15",
         "read_minutes": 6,
         "hue": 185,

@@ -120,6 +120,11 @@ def ga4_id():
     return gid if re.fullmatch(r"G-[A-Z0-9]+", gid) else ""
 
 
+def first_sentence(text):
+    first = text.split(". ")[0]
+    return first if first.endswith((".", "!", "?")) else first + "."
+
+
 def tracking_tags():
     out = []
     gaid = ga4_id()
@@ -220,7 +225,9 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel
 
 
 def head(title, desc, path, lds=(), og_type="website", noindex=False, image=None):
-    full = title if NAME in title else f"{title} | {NAME}"
+    # Keep titles to about 60 characters so Google shows them whole; the brand
+    # suffix is dropped when it would push past that (Google shows the site name anyway).
+    full = title if NAME in title or len(f"{title} | {NAME}") > 62 else f"{title} | {NAME}"
     img = absu(image or OG_IMAGE)
     robots = '<meta name="robots" content="noindex">\n' if noindex else ""
     return f"""<!doctype html>
@@ -457,7 +464,7 @@ def build_index():
 {cta_band()}
 </div>"""
     lds = [business_ld(), website_ld(), faq_ld(HOME_FAQ)]
-    write(path, page(head(f"Fort Myers & Cape Coral Web Design for Small Businesses | {NAME}",
+    write(path, page(head(f"Fort Myers & Cape Coral Web Design | {NAME}",
                           "Small business web design in Fort Myers, Cape Coral and Lee County, FL. Fixed-price websites from $500, fast on phones and set up for Google.",
                           path, lds), body, "/"))
 
@@ -513,7 +520,7 @@ def build_services():
 
     path = "/services/"
     trail = [("Home", "/"), ("Services", path)]
-    cards = card_list([(s["name"], s["answer"].split(". ")[0] + ".", s["price"], f'/services/{s["slug"]}/') for s in SERVICES])
+    cards = card_list([(s["name"], first_sentence(s["answer"]), s["price"], f'/services/{s["slug"]}/') for s in SERVICES])
     body = f"""<div class="wrap">{breadcrumbs(trail)}
 <header class="page-head"><h1>Web design services for Lee County small businesses</h1>
 <p class="lede">Everything a small business in Fort Myers, Cape Coral or anywhere in Lee County needs to be found and chosen online: a website, a Google listing that works, and a brand and print pieces that match. Every service has a fixed price agreed up front.</p></header>
@@ -695,7 +702,12 @@ def build_sitemap():
 
 
 def build_seo_files():
-    (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+    ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
+               "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot"]
+    robots = ("# Search engines and AI assistants are welcome to read and cite this site.\n"
+              + "".join(f"User-agent: {b}\n" for b in ai_bots) + "Allow: /\nDisallow: /api/\n\n"
+              + f"User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: {SITE}/sitemap.xml\n")
+    (PUB / "robots.txt").write_text(robots, encoding="utf-8")
     lines = [
         f"# {NAME}", "",
         f"> {NAME} builds fixed-price websites for small businesses in Fort Myers, Cape Coral and the rest of Lee County, Florida. "
@@ -708,11 +720,11 @@ def build_seo_files():
         f"- Contact: {SITE}/contact/" + (f" or {CFG['email']}" if CFG.get("email") else ""),
         "", "## Services",
     ]
-    lines += [f"- [{s['name']}]({absu('/services/' + s['slug'] + '/')}): {s['answer'].split('. ')[0]}." for s in SERVICES]
+    lines += [f"- [{s['name']}]({absu('/services/' + s['slug'] + '/')}): {first_sentence(s['answer'])}" for s in SERVICES]
     lines += ["", "## Towns"]
     lines += [f"- [{a['place']}]({absu('/areas/' + a['slug'] + '/')})" for a in AREAS]
     lines += ["", "## Blog"]
-    lines += [f"- [{p['title']}]({absu('/blog/' + p['slug'] + '/')}): {p['answer'].split('. ')[0]}." for p in POSTS]
+    lines += [f"- [{p['title']}]({absu('/blog/' + p['slug'] + '/')}): {first_sentence(p['answer'])}" for p in POSTS]
     lines += ["", "## Optional", f"- [Pricing]({SITE}/pricing/)", f"- [Contact]({SITE}/contact/)", ""]
     (PUB / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
 
