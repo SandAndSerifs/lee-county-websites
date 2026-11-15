@@ -2,6 +2,7 @@
 :root { --sand: #f6f1e8; --sand2: #ece3d3; --white: #fffdf9; --sea: #16324f; --glass: #8cc2bb; --glass-d: #4f8f87; --blush: #e9b8a1; --dim: #5b6b7a; --line: #d9cfbd; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
 body { margin: 0; background: var(--sand); color: var(--sea); font: 300 17px/1.75 Jost, "Helvetica Neue", sans-serif; }
 img { max-width: 100%; display: block; }
 p { margin: 0; }
@@ -32,14 +33,16 @@ h1, h2, h3 { margin: 0; font-family: "Cormorant Garamond", Palatino, Georgia, se
 
 .ct-hero { position: relative; min-height: 92vh; display: grid; place-items: center; color: #fff; text-align: center; overflow: hidden; }
 .ct-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.ct-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,25,40,.1) 30%, rgba(10,25,40,.55)); }
+.ct-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 45% at 50% 55%, rgba(10,25,40,.42), transparent 75%), linear-gradient(180deg, rgba(10,25,40,.15) 30%, rgba(10,25,40,.55)); }
+.ct-hero h1, .ct-hero-copy p { text-shadow: 0 2px 18px rgba(10,25,40,.45); }
 .ct-hero-copy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 22px; max-width: 820px; padding: 140px 24px 150px; }
 .ct-hero .ct-kick { color: #e9f5f2; }
 .ct-hero h1 { font-size: clamp(54px, 8.5vw, 112px); font-style: italic; font-weight: 400; line-height: .98; }
 .ct-hero-copy p:last-child { font-size: 19px; max-width: 520px; opacity: .95; }
 .ct-bookbar { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 0; max-width: 980px; margin: -64px auto 0; background: var(--white); box-shadow: 0 24px 60px rgba(22,50,79,.18); width: calc(100% - 48px); }
+.ct-bookbar > * { min-width: 0; }
 .ct-bookbar label { display: grid; gap: 4px; padding: 20px 26px; border-right: 1px solid var(--line); font: 500 11px/1 Jost, sans-serif; letter-spacing: .26em; text-transform: uppercase; color: var(--dim); }
-.ct-bookbar input, .ct-bookbar select { font: 400 17px/1.4 Jost, sans-serif; color: var(--sea); border: 0; background: transparent; padding: 6px 0 0; width: 100%; }
+.ct-bookbar input, .ct-bookbar select { min-width: 0; max-width: 100%; font: 400 17px/1.4 Jost, sans-serif; color: var(--sea); border: 0; background: transparent; padding: 6px 0 0; width: 100%; }
 .ct-bookbar button, .ct-btn, .ct-btnf { display: inline-flex; align-items: center; justify-content: center; background: var(--sea); color: var(--white); border: 0; padding: 0 34px; min-height: 58px; cursor: pointer;
   font: 400 13px/1 Jost, sans-serif; letter-spacing: .24em; text-transform: uppercase; text-decoration: none; }
 .ct-bookbar button:hover, .ct-btn:hover { background: var(--glass-d); }
@@ -145,4 +148,8 @@ h1, h2, h3 { margin: 0; font-family: "Cormorant Garamond", Palatino, Georgia, se
   .ct-cot { min-height: 280px; }
   .ct-bookbar label { padding: 16px 18px; }
   .ct-hero-copy { padding: 120px 20px 110px; }
+  .ct-table table { min-width: 0; }
+  .ct-table th, .ct-table td { padding: 16px 6px; }
+  .ct-table tbody th { font-size: 21px; }
+  .ct-table td { font-size: 16px; }
 }
