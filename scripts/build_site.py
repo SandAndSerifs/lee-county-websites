@@ -887,12 +887,43 @@ def build_demos():
 
 # ------------------------------------------------------------------ SEO files
 
+# ------------------------------------------------------------------ free tools
+
+TOOL_PATH = "/tools/ai-search-checker/"
+TOOL_DESC = ("Free check: can ChatGPT, Google's AI answers, Perplexity and Claude find, read and quote your "
+             "Lee County business website? Results in about 10 seconds, no email needed.")
+
+
+def build_tools():
+    """The free AI search readiness checker. The page markup, CSS and JS come from the ai-search-checker
+    project (content/ai-check-body.html, assets/css/ai-check.css, assets/js/ai-check.js); the scan runs in
+    the worker at /api/ai-check (src/ai-check.js)."""
+    trail = [("Home", "/"), ("AI search checker", TOOL_PATH)]
+    app = {
+        "@context": "https://schema.org", "@type": "WebApplication", "name": "AI Search Readiness Checker",
+        "url": absu(TOOL_PATH), "description": TOOL_DESC, "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any", "isAccessibleForFree": True,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "provider": {"@id": BIZ_ID},
+    }
+    head_html = head("Free AI Search Readiness Checker", TOOL_DESC, TOOL_PATH, lds=[app, crumbs_ld(trail)])
+    head_html = head_html.replace("</head>", '<link rel="stylesheet" href="/assets/css/ai-check.css">\n</head>', 1)
+    markup = (ROOT / "content" / "ai-check-body.html").read_text(encoding="utf-8")
+    open_tag = '<div class="ac" id="ac">'
+    assert open_tag in markup
+    markup = markup.replace(open_tag, '<div class="ac" id="ac" data-brand="lcw" data-theme="light">\n  ' + breadcrumbs(trail), 1)
+    cfg = {"mode": "live", "brand": "lcw", "apiUrl": "/api/ai-check", "brands": {"lcw": {"contact": "/contact/"}}}
+    body = (markup + f"<script>window.AI_CHECK_CONFIG = {json.dumps(cfg)};</script>\n"
+            '<script src="/assets/js/ai-check.js" defer></script>')
+    write(TOOL_PATH, page(head_html, body))
+
+
 def build_sitemap():
     urls = ["/", "/pricing/", "/services/", "/areas/", "/blog/", "/contact/"]
     urls += [f"/services/{s['slug']}/" for s in SERVICES]
     urls += [f"/areas/{a['slug']}/" for a in AREAS]
     urls += [f"/blog/{p['slug']}/" for p in POSTS]
-    urls += ["/privacy/"]
+    urls += [TOOL_PATH, "/privacy/"]
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
         f = PUB / "index.html" if u == "/" else PUB / u.strip("/") / "index.html"
@@ -927,6 +958,7 @@ def build_seo_files():
     lines += [f"- [{a['place']}]({absu('/areas/' + a['slug'] + '/')})" for a in AREAS]
     lines += ["", "## Blog"]
     lines += [f"- [{p['title']}]({absu('/blog/' + p['slug'] + '/')}): {first_sentence(p['answer'])}" for p in POSTS]
+    lines += ["", "## Free tools", f"- [AI search readiness checker]({absu(TOOL_PATH)}): {TOOL_DESC}"]
     lines += ["", "## Optional", f"- [Pricing]({SITE}/pricing/)", f"- [Contact]({SITE}/contact/)", ""]
     (PUB / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
 
@@ -953,6 +985,7 @@ def main():
     build_privacy()
     build_404()
     build_demos()
+    build_tools()
     build_seo_files()
     bust_asset_cache()
     build_sitemap()

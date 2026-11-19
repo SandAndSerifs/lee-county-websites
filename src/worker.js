@@ -4,13 +4,16 @@
  * Static files in ./public are served by Cloudflare's asset handling before this
  * code runs. Only requests that don't match a file reach the worker:
  *   POST /api/contact  -> validates the form and emails it (via Resend) if configured
+ *   GET /api/ai-check  -> the free AI search readiness checker (see ai-check.js)
  *   anything else      -> the site's 404 page
  *
  * Email is optional. Until RESEND_API_KEY, CONTACT_TO and CONTACT_FROM are set
  * (see README), the endpoint answers 503 and the page asks visitors to email directly.
  */
+import { handleAiCheck } from "./ai-check.js";
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/contact") {
@@ -18,6 +21,10 @@ export default {
         return json({ ok: false, error: "Method not allowed" }, 405, { Allow: "POST" });
       }
       return handleContact(request, env);
+    }
+
+    if (url.pathname === "/api/ai-check") {
+      return handleAiCheck(request, env, ctx, { site: "Lee County Websites" });
     }
 
     // Unknown path: serve the 404 page with a 404 status.

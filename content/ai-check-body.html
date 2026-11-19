@@ -1,0 +1,43 @@
+<div class="ac" id="ac">
+  <div class="ac-brandbar" id="ac-brandbar" hidden>
+    <span>Preview as:</span>
+    <button type="button" data-brand="ss" aria-pressed="true">Sand And Serifs</button>
+    <button type="button" data-brand="lcw" aria-pressed="false">Lee County Websites</button>
+  </div>
+
+  <header class="ac-hero">
+    <div class="ac-eyebrow"><b>Free tool</b><span>AI search readiness</span><span id="ac-brandname">Sand And Serifs</span></div>
+    <h1>Can AI search find your business?</h1>
+    <p class="ac-lede">See whether ChatGPT, Google's AI answers, Perplexity and Claude can get into your website, read it, tell where you work, and quote you when someone nearby asks.</p>
+  </header>
+
+  <form class="ac-scan" id="ac-form" novalidate>
+    <div class="ac-field">
+      <label for="ac-url">Your website</label>
+      <input id="ac-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" required>
+    </div>
+    <div class="ac-field">
+      <label for="ac-town">Town you serve <span>(optional)</span></label>
+      <input id="ac-town" name="town" type="text" autocomplete="address-level2" placeholder="Webster">
+    </div>
+    <button class="ac-btn" type="submit" id="ac-go">Check my site</button>
+  </form>
+  <p class="ac-formnote" id="ac-formnote">Free, no email needed. Takes about 10 seconds.</p>
+  <div class="ac-samples" id="ac-samples" hidden></div>
+  <div class="ac-msg" id="ac-msg" hidden></div>
+
+  <div class="ac-progress" id="ac-progress" hidden aria-live="polite">
+    <div data-step="0">Loading your home page</div>
+    <div data-step="1">Reading robots.txt for 12 AI crawlers</div>
+    <div data-step="2">Looking for business markup and your town</div>
+    <div data-step="3">Checking answers, prices, sitemap and llms.txt</div>
+  </div>
+
+  <section class="ac-result" id="ac-result" hidden aria-live="polite"></section>
+
+  <footer class="ac-fine">
+    <p><b>What this checks.</b> Your home page, robots.txt, sitemap and llms.txt, the way an AI crawler sees them: as raw HTML, without running JavaScript.</p>
+    <p><b>What it can't promise.</b> Nobody controls what AI tools say. This checks the things they're known to rely on: being allowed in, readable text, clear business details and direct answers.</p>
+    <p id="ac-demonote" hidden><b>About this preview.</b> This version can't reach the internet, so it shows saved results. The sample scans of sandandserifs.com and leecountywebsites.com were run on each site's current code on Nov 19, 2026. The plumber and salon are made-up example sites.</p>
+  </footer>
+</div>

@@ -36,6 +36,9 @@ Key facts:
 - [Google Business Profile Checklist for Lee County Small Businesses](https://leecountywebsites.com/blog/google-business-profile-lee-county/): To show up in Lee County map results, claim and verify your Google Business Profile, choose the most specific primary category, set an accurate service area or address, keep regular and special hours current, list your services, add real photos, and match your business name, phone and address to your website exactly.
 - [Redesigning Your Website and Keeping Your Google Rankings](https://leecountywebsites.com/blog/website-redesign-keep-google-rankings/): The way to keep your Google rankings through a redesign is to record which pages and searches bring you visitors before you change anything, keep your best pages at the same addresses where possible, set permanent 301 redirects from every old address to its new one, keep the content that's earning traffic, and watch Search Console closely for a month after launch to fix errors quickly.
 
+## Free tools
+- [AI search readiness checker](https://leecountywebsites.com/tools/ai-search-checker/): Free check: can ChatGPT, Google's AI answers, Perplexity and Claude find, read and quote your Lee County business website? Results in about 10 seconds, no email needed.
+
 ## Optional
 - [Pricing](https://leecountywebsites.com/pricing/)
 - [Contact](https://leecountywebsites.com/contact/)
