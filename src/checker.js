@@ -451,8 +451,11 @@ export async function runCheck({ url, town }, { fetch: fetchFn, now = new Date()
     const why =
       home.error === "timeout" ? "The site took too long to answer." :
       home.error === "redirects" ? "The site redirects too many times." :
-      home.status ? `The site answered with an error (HTTP ${home.status}).` :
-      "We couldn't reach the site. Check the address and try again.";
+      // Cloudflare answers 530 (and 52x) itself when the address doesn't exist or its server is down.
+      !home.status || home.status === 530 || (home.status >= 520 && home.status <= 527)
+        ? "We couldn't reach the site. Check the address and try again."
+        : home.status === 404 ? "The site's home page says it can't be found (error 404). Check the address and try again."
+        : `The site answered with an error (HTTP ${home.status}).`;
     // A 403 or 503 often means a firewall turned the checker away, which AI crawlers can hit too.
     const blocked = home.status === 403 || home.status === 503 || home.status === 429;
     throw new CheckError(blocked ? `${why} A firewall or bot protection may be turning automated visitors away, and AI crawlers can get the same answer.` : why, blocked ? "blocked" : "unreachable");
