@@ -639,7 +639,7 @@ function buildReport(ctx) {
     status: !biz ? "fail" : phoneInMarkup && placeInMarkup && hoursInMarkup ? "pass" : "warn",
     points: biz ? (phoneInMarkup ? 3 : 0) + (placeInMarkup ? 3 : 0) + (hoursInMarkup ? 3 : 0) : 0, max: 9,
     detail: biz
-      ? `Phone: ${phoneInMarkup ? "yes" : "missing"}. Town or service area: ${placeInMarkup ? listNames([bizLocality, ...areaServed].filter(Boolean).slice(0, 4)) : "missing"}. Hours: ${hoursInMarkup ? "yes" : "missing"}.`
+      ? `Phone: ${phoneInMarkup ? "yes" : "missing"}. Town or service area: ${placeInMarkup ? listNames([bizLocality, ...areaServed].filter(Boolean).filter((n, i, a) => a.findIndex((m) => m.toLowerCase() === n.toLowerCase()) === i).slice(0, 4)) : "missing"}. Hours: ${hoursInMarkup ? "yes" : "missing"}.`
       : "No local business markup to check.",
     fix: biz && !(phoneInMarkup && placeInMarkup && hoursInMarkup)
       ? `Add ${listNames([!phoneInMarkup && "telephone", !placeInMarkup && "address or areaServed", !hoursInMarkup && "openingHoursSpecification"].filter(Boolean))} to your LocalBusiness markup.`
@@ -665,7 +665,7 @@ function buildReport(ctx) {
     id: "town_text", group: "local", label: "Your town is named in the page text",
     status: !town ? "fail" : townCount >= 2 ? "pass" : townCount === 1 ? "warn" : "fail",
     points: townCount >= 2 ? 4 : townCount === 1 ? 2 : 0, max: 4,
-    detail: town ? `"${town}" appears ${townCount} time${townCount === 1 ? "" : "s"} on your home page.` : "No town to look for.",
+    detail: !town ? "No town to look for." : townCount ? `"${town}" appears ${townCount} time${townCount === 1 ? "" : "s"} on your home page.` : `"${town}" isn't named anywhere on your home page.`,
     fix: townCount >= 2 ? null : town ? `Mention ${town} and the nearby towns you serve in plain sentences, like "We serve ${town} and nearby towns."` : null,
   });
 
@@ -734,7 +734,7 @@ function buildReport(ctx) {
     points: fresh ? 4 : 0, max: 4,
     detail: recentMarkup ? `Your markup says the page was updated ${latest.toISOString().slice(0, 10)}.` : yearInText ? `Your page mentions ${year} or ${year - 1} outside the copyright line.` : "Nothing on the page shows it was updated in the last year (a copyright year doesn't count).",
     fix: fresh ? null : "Add a dated update (like \"Prices updated March " + year + "\") or dateModified in your markup, and refresh the page at least once a year.",
-    why: "The same study found pages updated within the last 12 months were cited noticeably more.",
+    why: "A 2026 study of 193,507 AI answers found pages updated within the last 12 months were cited noticeably more.",
   });
 
   const sitemapOk = sitemapRes.ok && /<(urlset|sitemapindex)\b/i.test(sitemapRes.text || "");
@@ -779,6 +779,8 @@ function buildReport(ctx) {
   });
   const topFixes = checks
     .filter((c) => c.fix && (c.status === "fail" || c.status === "warn" || c.status === "check"))
+    // With no local business markup at all, "add details to that markup" only repeats the first fix.
+    .filter((c) => !(c.id === "markup_details" && checks.some((x) => x.id === "local_markup" && x.status === "fail")))
     .sort((a, b) => (b.max - b.points) - (a.max - a.points) || (a.status === "check") - (b.status === "check"))
     .slice(0, 3)
     .map((c) => ({ id: c.id, label: c.label, fix: c.fix }));

@@ -3,8 +3,8 @@
   "use strict";
   var CFG = window.AI_CHECK_CONFIG || {};
   var BRANDS = {
-    ss: { name: "Sand And Serifs", contact: "https://sandandserifs.com/contact/", town: "Webster", owner: "Dan", area: "Rochester-area" },
-    lcw: { name: "Lee County Websites", contact: "https://leecountywebsites.com/contact/", town: "Cape Coral", owner: "Dan", area: "Lee County" }
+    ss: { name: "Sand And Serifs", contact: "https://sandandserifs.com/contact/", town: "Webster", owner: "Daniel", area: "Rochester-area" },
+    lcw: { name: "Lee County Websites", contact: "https://leecountywebsites.com/contact/", town: "Cape Coral", owner: "Daniel", area: "Lee County" }
   };
   var demo = CFG.mode === "demo";
   var brandId = CFG.brand || "ss";
