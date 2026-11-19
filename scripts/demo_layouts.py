@@ -31,7 +31,7 @@ class Ctx:
         self.smp, self.d, self.h = smp, d, h
         self.e = h.esc
         self.id = smp["id"]
-        self.base = f"/samples/{self.id}/"
+        self.base = f"/work/{self.id}/"
         self.act_slug, self.act_label = d["action"]
         self.act = f"{self.base}{self.act_slug}/"
         self.links = [(pg["nav"], f'{self.base}{pg["slug"]}/') for pg in d["pages"]]

@@ -6,7 +6,7 @@ Writes into public/:
   index.html                       home page
   services/, areas/, blog/         hubs plus one page per entry
   pricing/, contact/, privacy/, 404.html
-  samples/                         clickable demo sites for the sample businesses (noindex)
+  work/                            our work: clickable portfolio sites (noindex)
   sitemap.xml, robots.txt, llms.txt
 
 No dependencies beyond Python 3. Safe to run again: every output is rebuilt.
@@ -106,31 +106,31 @@ def kind_lc(smp):
 
 
 def mock_caption(smp):
-    return (f'<figcaption class="mk-cap"><span>Sample design: {esc(kind_lc(smp))} website</span>'
-            f'<a class="btn btn-line btn-sm" href="/samples/{smp["id"]}/">View the live site<span class="sr"> ({esc(kind_lc(smp))})</span>&nbsp;&rarr;</a></figcaption>')
+    return (f'<figcaption class="mk-cap"><span>{esc(smp["name"])}, {esc(smp["town"])}</span>'
+            f'<a class="btn btn-line btn-sm" href="/work/{smp["id"]}/">View the live site<span class="sr"> ({esc(kind_lc(smp))})</span>&nbsp;&rarr;</a></figcaption>')
 
 
 def sample_cards(tag="h2", sizes="(max-width: 760px) 90vw, 520px"):
     return "".join(
         f"""<article class="sample-card">{mock_figure(smp, "sample-fig", sizes)}
-  <{tag}><a href="/samples/{smp["id"]}/">{esc(smp["kind"])}</a></{tag}><p>{esc(smp["note"])}</p></article>"""
+  <{tag}><a href="/work/{smp["id"]}/">{esc(smp["kind"])}</a></{tag}><p>{esc(smp["note"])}</p></article>"""
         for smp in SAMPLES if smp["id"] in DEMOS)
 
 
 def mock_figure(smp, cls, sizes, eager=False):
     """The mockup links to its clickable demo. The caption link carries the name for
     screen readers, so the picture link is skipped by keyboard and assistive tech."""
-    return (f'<figure class="{cls}"><a class="mk-link" href="/samples/{smp["id"]}/" tabindex="-1" aria-hidden="true">'
+    return (f'<figure class="{cls}"><a class="mk-link" href="/work/{smp["id"]}/" tabindex="-1" aria-hidden="true">'
             f'{site_mock(smp, sizes=sizes, eager=eager)}</a>{mock_caption(smp)}</figure>')
 
 
 def site_mock(smp, sizes="(max-width: 900px) 100vw, 50vw", eager=False):
-    """A sample website drawn in HTML: a browser window with the desktop layout and a
+    """A website from our work, drawn in HTML: a browser window with the desktop layout and a
     phone with the mobile layout. Everything inside is decorative; the wrapper carries
     one text description for screen readers."""
     i = smp["id"]
     initial = smp["name"][0]
-    label = f'Sample {kind_lc(smp)} website design for {smp["town"]}, shown on a laptop and a phone'
+    label = f'{smp["name"]} website, {smp["town"]}, shown on a laptop and a phone'
     nav = "".join(f"<span>{esc(n)}</span>" for n in smp["nav"])
     cards = "".join(f'<div class="ms-card"><p class="ms-ct">{esc(t)}</p><p class="ms-cd">{esc(d)}</p><p class="ms-cp">{esc(pr)}</p></div>'
                     for t, d, pr in smp["cards"])
@@ -320,7 +320,7 @@ def head(title, desc, path, lds=(), og_type="website", noindex=False, image=None
 
 # ------------------------------------------------------------------ chrome
 
-NAV = [("Services", "/services/"), ("Examples", "/samples/"), ("Pricing", "/pricing/"), ("Towns", "/areas/"), ("Blog", "/blog/")]
+NAV = [("Services", "/services/"), ("Our work", "/work/"), ("Pricing", "/pricing/"), ("Towns", "/areas/"), ("Blog", "/blog/")]
 
 
 def header(active=""):
@@ -348,7 +348,7 @@ def footer():
     <div class="ft-brand">{logo_link("lg-ft")}<p>Fixed-price websites for small businesses in Fort Myers, Cape Coral and across Lee County, Florida.</p>{mail}</div>
     <div><h2>Services</h2><ul>{svc}</ul></div>
     <div><h2>Towns</h2><ul>{towns}</ul></div>
-    <div><h2>More</h2><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/samples/">Sample designs</a></li><li><a href="/#about">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li></ul></div>
+    <div><h2>More</h2><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/work/">Our work</a></li><li><a href="/#about">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li></ul></div>
   </div>
   <div class="wrap ft-base"><p>&copy; <span id="year">2026</span> {esc(NAME)}.{parent}</p></div>
 </footer>"""
@@ -510,13 +510,13 @@ def build_index():
     <p class="eyebrow">Web design in Lee County, Florida</p>
     <h1>Websites for Fort Myers and Cape Coral small businesses</h1>
     <p class="lede">Clear, fast websites at a fixed price: one page for $500, or up to five pages for $1,500. Built by hand, set up for Google, and yours from day one.</p>
-    <p class="hero-act"><a class="btn btn-go btn-lg" href="/contact/">Get a free quote</a><a class="text-link" href="/samples/">See example sites</a></p>
+    <p class="hero-act"><a class="btn btn-go btn-lg" href="/contact/">Get a free quote</a><a class="text-link" href="/work/">See our work</a></p>
   </div>
   {mock_figure(hero, "hero-shot", "(max-width: 900px) 85vw, 40vw", eager=True)}
 </div></section>
 <div class="wrap">
 <section class="sec"><h2>What I can do for you</h2><p class="sec-lede">Everything a small business needs to be found and chosen online, at a price agreed before any work starts.</p>{svc}</section>
-<section class="sec" id="examples"><h2>Example sites you can click through</h2><p class="sec-lede">Four sample sites built for the kinds of businesses I work with. Open any of them on your phone or computer and tap around.</p><div class="sample-grid sample-grid-home">{sample_cards("h3", "(max-width: 760px) 90vw, 560px")}</div><p><a class="btn btn-go" href="/samples/">See all example sites</a></p></section>
+<section class="sec" id="work"><h2>Our work</h2><p class="sec-lede">A few of the websites I&rsquo;ve designed and built for the kinds of businesses I work with. Each one is a live site: open it on your phone or computer and tap around.</p><div class="sample-grid sample-grid-home">{sample_cards("h3", "(max-width: 760px) 90vw, 560px")}</div><p><a class="btn btn-go" href="/work/">See all our work</a></p></section>
 <section class="sec"><h2>Simple, fixed pricing</h2><ul class="pk">{pk}</ul><p><a class="text-link" href="/pricing/">Full pricing and what's included</a></p></section>
 {steps()}
 <section class="sec"><h2>Serving all of Lee County</h2><p class="sec-lede">I work with businesses across the county by video call and email. Each town page covers how people there search.</p><ul class="towns">{towns}</ul></section>
@@ -796,7 +796,7 @@ def demo_form(fields, button, smp):
 
 def demo_page(smp, d, slug, title, body, desc):
     i = smp["id"]
-    base = f"/samples/{i}/"
+    base = f"/work/{i}/"
     act_slug, act_label = d["action"]
     links = [(pg["nav"], f'{base}{pg["slug"]}/') for pg in d["pages"]]
     cur = f"{base}{slug}/" if slug else base
@@ -858,7 +858,7 @@ def build_demos():
             demo_layouts.build(smp, d, types.SimpleNamespace(esc=esc, photo=photo, tel=tel, write=write, absu=absu,
                                                               tracking_tags=tracking_tags, NAME=NAME))
             continue
-        base = f"/samples/{i}/"
+        base = f"/work/{i}/"
         act_slug, act_label = d["action"]
         hero = f"""<section class="d-hero">{photo(i, "", sizes="100vw", eager=True, cls="d-hero-img")}
   <div class="d-in d-hero-copy"><p class="d-kick">{esc(smp["kicker"])}</p><h1>{esc(smp["headline"])}</h1><p class="d-sub">{esc(smp["sub"])}</p>
@@ -876,13 +876,13 @@ def build_demos():
         write(f"{base}{act_slug}/", demo_page(smp, d, act_slug, ap["title"], body, ap["intro"]))
 
     cards = sample_cards("h2")
-    trail = [("Home", "/"), ("Sample designs", "/samples/")]
+    trail = [("Home", "/"), ("Our work", "/work/")]
     body = f"""<div class="wrap">{breadcrumbs(trail)}
-<header class="page-head"><h1>Sample website designs</h1>
-<p class="lede">Four sample sites for the kinds of businesses I build for in Lee County. Each one is a working site you can click through on your phone or computer. The businesses aren't real.</p></header>
+<header class="page-head"><h1>Our work</h1>
+<p class="lede">Websites I&rsquo;ve designed and built for the kinds of businesses I work with in Lee County, each with its own look. Each one is a live site you can click through on your phone or computer.</p></header>
 <div class="sample-grid">{cards}</div>
 {cta_band()}</div>"""
-    write("/samples/", page(head("Sample website designs", "Click through four sample small business websites designed by Lee County Websites.", "/samples/", noindex=True), body, "/samples/"))
+    write("/work/", page(head("Our work", "Websites designed and built by Lee County Websites that you can click through: a fishing charter, an A/C company, a coffee shop and beach cottage rentals.", "/work/", noindex=True), body, "/work/"))
 
 
 # ------------------------------------------------------------------ SEO files

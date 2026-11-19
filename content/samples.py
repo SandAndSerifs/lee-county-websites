@@ -19,7 +19,7 @@ SAMPLES = [
         "package": "Business",
         "price": "$1,500",
         "note": "Built for visitors planning a trip on their phone, weeks ahead.",
-        "alt": "Sample site photo: a fishing boat tied to a dock on a Cape Coral style canal at sunset",
+        "alt": "Site photo: a fishing boat tied to a dock on a Cape Coral style canal at sunset",
     },
     {
         "id": "hvac",
@@ -38,7 +38,7 @@ SAMPLES = [
         "package": "Business",
         "price": "$1,500",
         "note": "Big call button for the homeowner standing in a hot house in August.",
-        "alt": "Sample site photo: an outdoor air conditioning unit beside a stucco Florida home",
+        "alt": "Site photo: an outdoor air conditioning unit beside a stucco Florida home",
     },
     {
         "id": "coffee",
@@ -57,7 +57,7 @@ SAMPLES = [
         "package": "Starter",
         "price": "$500",
         "note": "One page that answers \"are you open\" and \"what do you have\" in two seconds.",
-        "alt": "Sample site photo: iced coffees and a croissant on a wooden counter in a brick cafe",
+        "alt": "Site photo: iced coffees and a croissant on a wooden counter in a brick cafe",
     },
     {
         "id": "cottage",
@@ -76,6 +76,6 @@ SAMPLES = [
         "package": "Custom",
         "price": "Quoted",
         "note": "Rates, photos and the calendar up front for guests comparing rentals from home.",
-        "alt": "Sample site photo: a mint green raised beach cottage with two bicycles by the stairs",
+        "alt": "Site photo: a mint green raised beach cottage with two bicycles by the stairs",
     },
 ]

@@ -5,6 +5,7 @@
  * code runs. Only requests that don't match a file reach the worker:
  *   POST /api/contact  -> validates the form and emails it (via Resend) if configured
  *   GET /api/ai-check  -> the free AI search readiness checker (see ai-check.js)
+ *   /samples/*         -> 301 to /work/* (old portfolio address)
  *   anything else      -> the site's 404 page
  *
  * Email is optional. Until RESEND_API_KEY, CONTACT_TO and CONTACT_FROM are set
@@ -25,6 +26,12 @@ export default {
 
     if (url.pathname === "/api/ai-check") {
       return handleAiCheck(request, env, ctx, { site: "Lee County Websites" });
+    }
+
+    // Our work moved from /samples/ to /work/ (Nov 2026). Keep old links working.
+    if (url.pathname === "/samples" || url.pathname.startsWith("/samples/")) {
+      const to = new URL(url.pathname.replace(/^\/samples/, "/work") + url.search, url);
+      return Response.redirect(to.toString(), 301);
     }
 
     // Unknown path: serve the 404 page with a 404 status.

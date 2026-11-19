@@ -1,6 +1,6 @@
 """Clickable demo sites for the four sample businesses in samples.py.
 
-Each demo lives at /samples/<id>/ and is clearly marked as a sample design on
+Each demo lives at /work/<id>/ and is clearly marked as a sample design on
 every page. The businesses are invented: phone numbers use the 555-01xx range
 that is reserved for fiction, emails use the reserved .example domain, and no
 street addresses are given. Demo pages are kept out of search (noindex, not in

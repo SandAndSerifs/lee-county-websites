@@ -4,7 +4,7 @@ Marketing site for Lee County Websites (leecountywebsites.com): fixed-price webs
 
 Live at https://leecountywebsites.com once Cloudflare Workers Builds deploys `main`.
 
-Dark storefront look: deep navy and blue-gray panels, bright blue accents, a featured carousel of sample builds, capsule cards in scrolling rows, and a tabbed list with a hover preview. Plain HTML, CSS and JavaScript, built by a small Python script, deployed on Cloudflare Workers with static assets.
+Dark storefront look: deep navy and blue-gray panels, bright blue accents, a featured carousel of our work, capsule cards in scrolling rows, and a tabbed list with a hover preview. Plain HTML, CSS and JavaScript, built by a small Python script, deployed on Cloudflare Workers with static assets.
 
 ## What's in the repo
 
@@ -45,5 +45,5 @@ The form posts to `/api/contact`, which emails each enquiry through Resend. `CON
 ## Content rules
 
 - Copy is written fresh for Lee County. Don't paste wording from sandandserifs.com: duplicate text on two sites hurts both in Google.
-- No invented clients, reviews, results or statistics. The four businesses in the carousel are made up and labelled as samples on the page. Their photos were generated with Figma AI and contain no people, text or logos.
+- No invented clients, reviews, results or statistics. The four businesses in the carousel are made up. They live under /work/ (old /samples/ links redirect) and are labelled "Our work" with no sample wording (Dan's call, Nov 2026); never add client wording, testimonials, results or logos to them. Their photos were generated with Figma AI and contain no people, text or logos.
 - No address or office claims. Towns are service areas; work happens by video call and email.
