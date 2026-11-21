@@ -6,7 +6,7 @@ Writes into public/:
   index.html                       home page
   services/, areas/, blog/         hubs plus one page per entry
   pricing/, contact/, privacy/, 404.html
-  work/                            our work: clickable portfolio sites (noindex)
+  work/                            our work: index page, plus clickable portfolio sites (noindex)
   sitemap.xml, robots.txt, llms.txt
 
 No dependencies beyond Python 3. Safe to run again: every output is rebuilt.
@@ -882,7 +882,7 @@ def build_demos():
 <p class="lede">Websites I&rsquo;ve designed and built for the kinds of businesses I work with in Lee County, each with its own look. Each one is a live site you can click through on your phone or computer.</p></header>
 <div class="sample-grid">{cards}</div>
 {cta_band()}</div>"""
-    write("/work/", page(head("Our work", "Websites designed and built by Lee County Websites that you can click through: a fishing charter, an A/C company, a coffee shop and beach cottage rentals.", "/work/", noindex=True), body, "/work/"))
+    write("/work/", page(head("Our work", "Websites designed and built by Lee County Websites that you can click through: a fishing charter, an A/C company, a coffee shop and beach cottage rentals.", "/work/"), body, "/work/"))
 
 
 # ------------------------------------------------------------------ SEO files
@@ -919,7 +919,7 @@ def build_tools():
 
 
 def build_sitemap():
-    urls = ["/", "/pricing/", "/services/", "/areas/", "/blog/", "/contact/"]
+    urls = ["/", "/pricing/", "/services/", "/work/", "/areas/", "/blog/", "/contact/"]
     urls += [f"/services/{s['slug']}/" for s in SERVICES]
     urls += [f"/areas/{a['slug']}/" for a in AREAS]
     urls += [f"/blog/{p['slug']}/" for p in POSTS]
