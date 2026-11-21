@@ -6,5 +6,14 @@
 /assets/*
   Cache-Control: public, max-age=86400
 
-/work/*
+/work/charter/*
+  X-Robots-Tag: noindex
+
+/work/hvac/*
+  X-Robots-Tag: noindex
+
+/work/coffee/*
+  X-Robots-Tag: noindex
+
+/work/cottage/*
   X-Robots-Tag: noindex
