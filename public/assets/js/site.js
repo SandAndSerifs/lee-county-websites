@@ -4,7 +4,15 @@
 (function () {
   "use strict";
 
+  // With gtag.js on the page (no GTM), events go to GA4 through gtag(), since
+  // GA4 ignores plain dataLayer objects. With GTM, they go on the dataLayer
+  // for a Custom Event trigger to pick up.
   var track = function (name, params) {
+    var hasGtm = !!document.querySelector("script[src*='googletagmanager.com/gtm.js']");
+    if (!hasGtm && typeof window.gtag === "function") {
+      window.gtag("event", name, params || {});
+      return;
+    }
     var ev = { event: name };
     for (var k in params || {}) ev[k] = params[k];
     (window.dataLayer = window.dataLayer || []).push(ev);
@@ -74,10 +82,15 @@
     fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
       .then(function (res) {
         if (!res.ok) throw new Error(String(res.status));
+        return res.json().catch(function () { return {}; });
+      })
+      .then(function (body) {
         form.reset();
         if (pageField) pageField.value = location.pathname;
         setStatus("Got it. I'll reply within a business day.", "ok");
-        track("generate_lead", { form_id: "contact", page_path: location.pathname });
+        // Count a lead only when the email to Dan actually went out
+        // (the server answers sent: true), never for honeypot drops.
+        if (body && body.sent) track("generate_lead", { form_id: "contact", page_path: location.pathname });
       })
       .catch(function () {
         setStatus("That didn't go through. " + (form.getAttribute("data-fallback") || "Please try again in a few minutes."), "error");

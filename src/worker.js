@@ -103,7 +103,8 @@ async function handleContact(request, env) {
   if (!res.ok) {
     return json({ ok: false, error: "The message could not be sent." }, 502);
   }
-  return json({ ok: true });
+  // sent: true tells the page the email went out, so it can count a lead.
+  return json({ ok: true, sent: true });
 }
 
 function clean(value, max) {
