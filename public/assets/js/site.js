@@ -1,21 +1,16 @@
 /* Lee County Websites: shared by every page. Mobile menu, the contact form
-   and analytics events (pushed to the Google Tag Manager dataLayer when GTM
-   is installed). */
+   and analytics events, sent to GA4 as gtag() commands (see track below). */
 (function () {
   "use strict";
 
-  // With gtag.js on the page (no GTM), events go to GA4 through gtag(), since
-  // GA4 ignores plain dataLayer objects. With GTM, they go on the dataLayer
-  // for a Custom Event trigger to pick up.
+  // Events go to GA4 as gtag() commands. That works with gtag.js on the page
+  // and with the Google tag inside GTM (both read gtag commands from the
+  // dataLayer), so there's no GA4 event tag to add in GTM. Adding one for these
+  // names would count them twice.
+  var gtagCmd = function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
   var track = function (name, params) {
-    var hasGtm = !!document.querySelector("script[src*='googletagmanager.com/gtm.js']");
-    if (!hasGtm && typeof window.gtag === "function") {
-      window.gtag("event", name, params || {});
-      return;
-    }
-    var ev = { event: name };
-    for (var k in params || {}) ev[k] = params[k];
-    (window.dataLayer = window.dataLayer || []).push(ev);
+    if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+    else gtagCmd("event", name, params || {});
   };
 
   var yearEl = document.getElementById("year");
@@ -57,10 +52,7 @@
   } catch (err) { /* old browser */ }
   var pageField = form.querySelector("input[name='page']");
   if (pageField) pageField.value = location.pathname;
-  var started = false;
-  form.addEventListener("input", function () {
-    if (!started) { started = true; track("form_start", { form_id: "contact", page_path: location.pathname }); }
-  });
+  // GA4's enhanced measurement already sends form_start, so it isn't sent here.
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var firstBad = null;
