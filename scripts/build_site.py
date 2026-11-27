@@ -596,7 +596,7 @@ def build_areas():
     for a in AREAS:
         path = f"/areas/{a['slug']}/"
         trail = [("Home", "/"), ("Towns", "/areas/"), (a["town"], path)]
-        checklist = (f"A {a['town']} site should have", ticks(a["checklist"]))
+        checklist = (f"{'An' if a['town'][0] in 'AEIOU' else 'A'} {a['town']} site should have", ticks(a["checklist"]))
         services = ("Services here", link_list([(SVC[x]["name"], f"/services/{x}/") for x in a["services"]]))
         body = detail_page(
             trail, a["h1"], a["answer"],
