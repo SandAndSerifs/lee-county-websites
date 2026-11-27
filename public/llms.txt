@@ -6,7 +6,7 @@ Key facts:
 - Prices (fixed): Starter one-page website $500 (about 2 weeks); Business website up to five pages $1,500 (about 4 weeks); stores, booking systems, bigger sites and brand work are priced as one flat number after a free 20-minute chat.
 - Payment: half at the start, half at launch. Care plans are optional.
 - Clients own their domain, code and hosting. Sites are hosted on Cloudflare.
-- Areas served: Fort Myers, FL, Cape Coral, FL, Bonita Springs, FL, Estero, FL, Lehigh Acres, FL, Sanibel, FL, North Fort Myers, FL, Fort Myers Beach, FL, and the rest of Lee County. Projects run by video call and email.
+- Areas served: Fort Myers, FL, Cape Coral, FL, Bonita Springs, FL, Estero, FL, Lehigh Acres, FL, Sanibel, FL, North Fort Myers, FL, Fort Myers Beach, FL, Pine Island, FL, San Carlos Park, FL, Alva, FL, Captiva, FL, Boca Grande, FL, Gateway, FL, and the rest of Lee County. Projects run by video call and email.
 - Contact: https://leecountywebsites.com/contact/ or info@leecountywebsites.com
 
 ## Services
@@ -27,6 +27,12 @@ Key facts:
 - [Sanibel, FL](https://leecountywebsites.com/areas/sanibel-fl/)
 - [North Fort Myers, FL](https://leecountywebsites.com/areas/north-fort-myers-fl/)
 - [Fort Myers Beach, FL](https://leecountywebsites.com/areas/fort-myers-beach-fl/)
+- [Pine Island, FL](https://leecountywebsites.com/areas/pine-island-fl/)
+- [San Carlos Park, FL](https://leecountywebsites.com/areas/san-carlos-park-fl/)
+- [Alva, FL](https://leecountywebsites.com/areas/alva-fl/)
+- [Captiva, FL](https://leecountywebsites.com/areas/captiva-fl/)
+- [Boca Grande, FL](https://leecountywebsites.com/areas/boca-grande-fl/)
+- [Gateway, FL](https://leecountywebsites.com/areas/gateway-fl/)
 
 ## Blog
 - [When Visitors Ask ChatGPT Where to Go: Getting Your Lee County Business Into AI Answers](https://leecountywebsites.com/blog/visitors-ask-chatgpt-lee-county-business/): To give your Lee County business a fair shot at appearing in ChatGPT, Google AI Overviews and similar tools, make sure your website doesn't block their crawlers, state plainly on your site what you offer, where, when and roughly for how much, and keep your listings on Google Business Profile, Bing Places and Apple Business saying the same thing.
