@@ -64,7 +64,7 @@ AREAS = [
         "answer": "Lee County Websites makes fixed-price websites for local businesses in Cape Coral, Florida, including trades, marine services, restaurants and shops. A one-page site is $500 and a five-page site is $1,500, with the price set before any work begins. Every site is designed for phones first and set up to show up in Cape Coral searches and map results.",
         "sections": [
             ("A city of new homeowners", """
-<p>A lot of Cape Coral residents arrived recently, so they don't have a go-to plumber, pool company or dentist yet. They search, read a couple of websites and call whoever looks most trustworthy and clearly covers their part of the city. Naming the areas you work, like the southeast, the northwest or along Pine Island Road, helps a new resident feel sure you'll come out to them.</p>
+<p>A lot of Cape Coral residents arrived recently, so they don't have a go-to plumber, pool company or dentist yet. They search, read a couple of websites and call whoever looks most trustworthy and clearly covers their part of the city. Naming the areas you work, like the southeast, the northwest or along Pine Island Road, helps a new resident feel sure you'll come out to them. That's the heart of <a href="/services/local-seo/">local SEO in Cape Coral</a>: making it obvious which neighborhoods you cover, on your site and on your Google Business Profile.</p>
 """),
             ("Built around the water", """
 <p>With hundreds of miles of canals, Cape Coral has a big marine economy: boat lifts, dock and seawall builders, detailing, mobile mechanics, charters and rentals. Those customers want to see your work and know you handle their kind of job. For a marine business I'd lead with real project photos, the services you actually offer and a quote form that asks the right questions, like boat length or lift capacity, so your first call is a useful one.</p>
@@ -215,7 +215,7 @@ AREAS = [
 <p>Sanibel is known for shelling, beaches and the J.N. \"Ding\" Darling National Wildlife Refuge, and the people who come for those things plan carefully. They compare rentals, tours and places to eat from home. The questions they ask are practical: is it open, what does it cost, how do I book, and how far is it from where I'm staying. A site that answers those quickly gets the booking.</p>
 """),
             ("Show that you're open", """
-<p>Since Hurricane Ian in 2022, many island businesses have rebuilt, reopened or moved. Visitors still wonder what's open. A clear \"open daily\" line with current hours, recent photos and an updated Google Business Profile removes that doubt, and it's worth checking every season.</p>
+<p>Since Hurricane Ian in 2022, many island businesses have rebuilt, reopened or moved. Visitors still wonder what's open. A clear \"open daily\" line with current hours, recent photos and an updated Google Business Profile removes that doubt, and it's worth checking every season. A <a href="/services/website-care-plans/">website care plan</a> can handle that check for you.</p>
 """),
             ("What that could look like", """
 <p>Consider a beach cottage rental near the lighthouse end of the island. The site would lead with photos, the number of guests and bedrooms, rates by season and an availability calendar or booking link. A short local guide covers parking, bikes and the best shelling times, which also gives Google more reasons to show the page.</p>
@@ -286,7 +286,7 @@ AREAS = [
         "answer": "Lee County Websites makes fixed-price websites for local businesses on Fort Myers Beach, Florida, including rentals, restaurants, watersports and shops. A one-page site is $500 and a five-page site is $1,500, with the price set before any work begins. Each one is built for visitors on a phone: current hours, location, prices and booking right on the first screen.",
         "sections": [
             ("Tell people what's changed", """
-<p>Many businesses on Estero Island reopened in new buildings, temporary spaces or new locations after the 2022 storm. Returning visitors search for the places they remember and often find old information. A site that clearly says where you are now, what you offer and when you're open, backed by a matching Google Business Profile, wins those searches.</p>
+<p>Many businesses on Estero Island reopened in new buildings, temporary spaces or new locations after the 2022 storm. Returning visitors search for the places they remember and often find old information. A site that clearly says where you are now, what you offer and when you're open, backed by a matching Google Business Profile, wins those searches. Keeping those details right everywhere is most of what <a href="/services/local-seo/">local SEO in Lee County</a> comes down to.</p>
 """),
             ("Decisions made on the sand", """
 <p>A lot of beach customers decide on the spot, standing on the sand or walking toward Times Square, looking for lunch, a parasail, a bike or a boat. They need prices, hours and a booking button without scrolling. Heavy pages and pop-ups lose them on a weak beach signal, so I keep pages light and fast.</p>

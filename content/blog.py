@@ -41,7 +41,7 @@ POSTS = [
 <p>Put the answer first on each page, then the detail. That helps people skimming on a phone, and it's the sentence AI tools are most likely to pick up.</p>
 
 <h2>Do listings and reviews matter for AI answers?</h2>
-<p>Yes. Your website is one source; the tools also read your <a href="/blog/google-business-profile-lee-county/">Google Business Profile</a>, Bing Places (which feeds Microsoft's Copilot), Apple Business (which feeds Apple Maps), review sites and local directories. When those disagree about your hours or phone number, the AI may pick the wrong one. Spend an hour making them all match.</p>
+<p>Yes. Your website is one source; the tools also read your <a href="/blog/google-business-profile-lee-county/">Google Business Profile</a>, Bing Places (which feeds Microsoft's Copilot), Apple Business (which feeds Apple Maps), review sites and local directories. When those disagree about your hours or phone number, the AI may pick the wrong one. Spend an hour making them all match. Lining these up is the first thing I do in <a href="/services/local-seo/">local SEO for Lee County businesses</a>.</p>
 <p>Reviews and local mentions are the part you can't shortcut. A write-up in a local paper, a listing with your chamber of commerce or a mention from a partner business are all signals that you're real and well regarded. Ask happy customers for reviews regularly, not just once.</p>
 
 <h2>What about storms and seasonal changes?</h2>
@@ -134,7 +134,7 @@ POSTS = [
 </ul>
 
 <h2>Running costs after launch</h2>
-<p>Expect roughly $10 to $20 a year for a domain name. Hosting ranges from free to tens of dollars a month depending on the platform. Sites I build run on Cloudflare in your own account, where most small business sites cost nothing or a few dollars a month. Builders bundle hosting into the subscription, so you keep paying as long as the site exists.</p>
+<p>Expect roughly $10 to $20 a year for a domain name. Hosting ranges from free to tens of dollars a month depending on the platform. Sites I build run on Cloudflare in your own account, where most small business sites cost nothing or a few dollars a month. Builders bundle hosting into the subscription, so you keep paying as long as the site exists. If you'd rather hand off updates, a <a href="/services/website-care-plans/">website care plan</a> is optional and quoted monthly.</p>
 
 <h2>My prices</h2>
 <ul>
@@ -185,7 +185,7 @@ POSTS = [
 </ul>
 
 <h2>Keep it in one place</h2>
-<p>The less you have to remember, the more likely it gets done. I set up the things that change by season, like hours, menus, specials and rates, so you can edit them from your phone. Your Google profile has a separate special hours feature for holidays, which is worth filling in every year.</p>
+<p>The less you have to remember, the more likely it gets done. I set up the things that change by season, like hours, menus, specials and rates, so you can edit them from your phone. Your Google profile has a separate special hours feature for holidays, which is worth filling in every year. If you'd rather not think about it at all, a <a href="/services/website-care-plans/">website care plan</a> covers the seasonal changes for you.</p>
 
 <h2>A small calendar</h2>
 <ul>
@@ -208,7 +208,7 @@ POSTS = [
         "tag": "Local SEO",
         "answer": "To show up in Lee County map results, claim and verify your Google Business Profile, choose the most specific primary category, set an accurate service area or address, keep regular and special hours current, list your services, add real photos, and match your business name, phone and address to your website exactly. Then ask happy customers for reviews and reply to every one.",
         "body": """
-<p>When someone in Cape Coral or Fort Myers searches for a service on their phone, the map results usually appear first. Those come from Google Business Profiles. For most local businesses, this free listing does more work than any other part of their online presence. Here's how to get it right.</p>
+<p>When someone in Cape Coral or Fort Myers searches for a service on their phone, the map results usually appear first. Those come from Google Business Profiles. For most local businesses, this free listing does more work than any other part of their online presence. Here's how to get it right, or you can hand it to me as part of <a href="/services/local-seo/">local SEO services in Lee County</a>.</p>
 
 <h2>Set it up properly</h2>
 <ul>

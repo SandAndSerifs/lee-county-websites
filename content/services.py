@@ -120,26 +120,38 @@ SERVICES = [
         "icon": "pin",
         "hue": 145,
         "tags": ["Map results", "Business Profile", "Town pages"],
-        "seo_title": "Lee County Local SEO for Fort Myers & Cape Coral",
-        "description": "Local SEO and Google Business Profile help for Lee County small businesses, so Fort Myers, Cape Coral, Lehigh Acres and Estero customers find you on Maps.",
-        "h1": "Local SEO and Google Business Profile help in Lee County",
+        "seo_title": "Local SEO Services in Lee County: Fort Myers & Cape Coral",
+        "description": "Local SEO services for Lee County small businesses: Google Business Profile cleanup, town pages and structured data so Fort Myers and Cape Coral customers find you.",
+        "h1": "Local SEO services for Fort Myers, Cape Coral and all of Lee County",
         "lede": "When someone in Cape Coral types \"near me\" into their phone, Google picks a handful of businesses to show. Local SEO is the plain, unglamorous work of making sure yours is one of them.",
         "price": "Included in every site",
         "time": "Set up at launch",
-        "answer": "Local SEO means making your business easy for Google Maps, regular search results and AI assistants to find and trust when someone nearby looks for what you sell. For Lee County businesses I set up and tidy the Google Business Profile, write pages for the services and towns you actually cover, add structured data, and connect Search Console. The basics are included with every website I build, and I can also do them for a site you already have.",
+        "answer": "Local SEO means making your business easy for Google Maps, regular search results and AI assistants to find and trust when someone nearby looks for what you sell. For small businesses in Fort Myers, Cape Coral and the rest of Lee County I set up and tidy the Google Business Profile, write pages for the services and towns you actually cover, add structured data, and connect Search Console. The basics are included with every website I build, and I can also do them for a site you already have.",
         "sections": [
             ("Your Google Business Profile comes first", """
-<p>For most local searches the map results appear above the regular links, and those come from Google Business Profiles, not websites. So I start there: the right primary category, your real service area, accurate hours (including the slow season and holidays), services, photos and a description written the way customers search. Then I make sure your name, phone number and address read exactly the same on your site and your profile.</p>
+<p>For most local searches the map results appear above the regular links, and those come from Google Business Profiles, not websites. So I start there: the right primary category, your real service area, accurate hours (including the slow season and holidays), services, photos and a description written the way customers search. Then I make sure your name, phone number and address read exactly the same on your site and your profile. My <a href="/blog/google-business-profile-lee-county/">Google Business Profile checklist for Lee County</a> lists every step if you'd like to do it yourself.</p>
 <p>If you work out of your truck or from home, you can hide your address and list the towns you serve instead. That's common in Lee County trades, and I'll set it up correctly.</p>
+"""),
+            ("How Lee County customers search", """
+<p>Lee County isn't one market. A homeowner in Cape Coral searches \"pool service Cape Coral\" and expects someone who knows the canals. Someone in Lehigh Acres may search in Spanish. A winter visitor staying on Fort Myers Beach types \"near me\" from a rental and doesn't know the roads yet. Local SEO here means showing up for each of those searches, not just for \"Fort Myers\".</p>
+<p>It also means planning for the season. Searches for restaurants, tours and rentals climb when visitors arrive after the holidays and fall away in summer, while air conditioning, roofing and storm repair searches peak at other times. I set up your profile and pages so they're right for the busy months before they arrive.</p>
 """),
             ("Pages for the places you work", """
 <p>A roofer based in Fort Myers who also works in Lehigh Acres and Bonita Springs needs the site to say so clearly. Where it makes sense I write a short page for each main service and each town you cover, with something specific to that place on every one. Copy and paste pages with only the town name swapped don't help, and Google has said as much.</p>
+<p>You can see the approach on this site: each of my <a href="/areas/">Lee County town pages</a>, like <a href="/areas/cape-coral-fl/">Cape Coral</a> and <a href="/areas/lehigh-acres-fl/">Lehigh Acres</a>, talks about how people in that town search and what a business there needs. Town and service pages are part of the <a href="/pricing/">Business package</a>.</p>
 """),
             ("Being the answer in AI search", """
 <p>More people now ask ChatGPT, Gemini or Google's AI answers which business to call. Those tools lean on the same signals: a clear statement of what you do and where, structured data, consistent details across the web and real reviews. I write each page so the first lines answer the question a customer would ask, which is also what AI tools quote. The details are on my <a href="/services/ai-search-visibility/">AI search visibility</a> page.</p>
 """),
             ("Reviews, without the tricks", """
 <p>Reviews matter a lot for map rankings. I'll give you a short link and a simple routine for asking happy customers, plus template replies for good and bad reviews. I won't buy reviews, filter out unhappy customers or pad your listing with keywords. Those shortcuts get listings suspended.</p>
+"""),
+            ("Local SEO for a site I didn't build", """
+<p>You don't need a new website to get help. I start by looking at your Google Business Profile, your site and the searches you already appear in, then send you a short list of what's worth fixing first and a fixed quote for doing it. Often the biggest wins are on the profile, not the site. If the site itself is holding you back, I'll say so, and the <a href="/services/website-redesign/">website redesign</a> page explains how I rebuild without losing the rankings you have.</p>
+<p>Want a quick look first? My free <a href="/tools/ai-search-checker/">AI search checker</a> shows whether AI tools can read your site.</p>
+"""),
+            ("Keeping it current", """
+<p>Local SEO isn't a one-time job in a place where hours change with the season and storms close businesses for days. Your profile and site need to stay accurate. You can do that yourself, or a <a href="/services/website-care-plans/">website care plan</a> keeps your Google Business Profile and site in step for you every month.</p>
 """),
         ],
         "included": [
@@ -154,10 +166,11 @@ SERVICES = [
             ("How long does local SEO take to work?", "Fixes to your Google Business Profile can show up within a few weeks. New pages usually take one to three months to settle. Anyone who promises the top spot is guessing."),
             ("Do I need an office address to show up on Google Maps?", "No. Service businesses can hide their address and list the towns they serve. You do need a real location where you're based; virtual offices break Google's rules."),
             ("Is local SEO included with a website?", "The basics are included with every site I build: Business Profile cleanup, structured data, Search Console and a sitemap. Town and service pages are part of the Business package or quoted separately."),
-            ("Can you help with SEO if you didn't build my site?", "Yes. I start by looking at your Business Profile and your site, then tell you what's worth fixing first and what it would cost."),
+            ("Can you help with SEO if you didn't build my site?", "Yes. I start by looking at your Business Profile and your site, then tell you what's worth fixing first and give you a fixed quote."),
+            ("Do you do local SEO outside Fort Myers?", "Yes. I work with businesses across Lee County, including Cape Coral, Lehigh Acres, Estero, Bonita Springs and the islands, all by video call and email."),
         ],
-        "areas": ["cape-coral-fl", "lehigh-acres-fl", "fort-myers-fl", "estero-fl"],
-        "posts": ["google-business-profile-lee-county", "visitors-ask-chatgpt-lee-county-business"],
+        "areas": ["fort-myers-fl", "cape-coral-fl", "lehigh-acres-fl", "estero-fl", "bonita-springs-fl"],
+        "posts": ["google-business-profile-lee-county", "visitors-ask-chatgpt-lee-county-business", "website-redesign-keep-google-rankings"],
     },
     {
         "slug": "ai-search-visibility",
@@ -317,13 +330,13 @@ SERVICES = [
         "icon": "shield",
         "hue": 185,
         "tags": ["Edits on request", "Storm updates", "Monthly checks"],
-        "seo_title": "Website Care Plans for Lee County Small Businesses",
-        "description": "Optional website care plans for Fort Myers and Cape Coral businesses: small edits, seasonal and storm updates, monthly checks and a short report. Cancel any time.",
-        "h1": "Website care plans for Lee County small businesses",
+        "seo_title": "Website Care Plans for Fort Myers & Cape Coral Businesses",
+        "description": "Website care plans for Fort Myers, Cape Coral and Lee County small businesses: edits by text, seasonal and storm updates, monthly checks and a report.",
+        "h1": "Website care plans for Fort Myers and Lee County businesses",
         "lede": "You don't need one. But if you'd rather text me a change and forget about it, including the hours update when a storm closes you for three days, a care plan covers it.",
         "price": "Quoted monthly",
         "time": "Ongoing, cancel any time",
-        "answer": "My care plans are an optional monthly service for owners who would rather not touch their own website. A plan covers small edits on request, seasonal hour and menu changes, closure notices during storms, monthly checks that the site, forms and Google listing are working, and a short monthly note on how it's doing. Plans are quoted based on how often things change, and you can stop any time.",
+        "answer": "My website care plans are an optional monthly service for small businesses in Fort Myers, Cape Coral and the rest of Lee County whose owners would rather not touch their own website. A plan covers small edits on request, seasonal hour and menu changes, closure notices during storms, monthly checks that the site, forms and Google listing are working, and a short monthly note on how it's doing. Plans are quoted based on how often things change, and you can stop any time.",
         "sections": [
             ("What's covered", """
 <ul>
@@ -334,8 +347,19 @@ SERVICES = [
 <li>A short monthly note: visits, calls and form enquiries, and anything worth changing.</li>
 </ul>
 """),
+            ("Who a care plan suits", """
+<p>Most of the Fort Myers and Cape Coral owners who ask about care plans have the same problem: the website is never urgent until it's wrong. A restaurant that changes its menu and hours twice a year, a contractor who is on job sites from dawn, a shop on Fort Myers Beach or Sanibel that lives and dies by the season. If a change sits on your list for weeks because logging in is a chore, a care plan clears that list.</p>
+<p>If you like doing it yourself, you don't need one. Every site I build is set up so you can edit the things that change by season from your phone, and my <a href="/blog/seasonal-business-website-southwest-florida/">seasonal website guide</a> walks through what to update and when.</p>
+"""),
+            ("How a request works", """
+<p>Send me a text or an email: \"new lunch special, summer hours from May 1, swap the photo on the home page.\" I make the change, usually the same day, and reply when it's live. There's no ticket system and no login for you to remember.</p>
+<p>Because your Google Business Profile shows up above your website in most local searches, I keep it in step with the site: the same hours, the same phone number, the same services. That's the upkeep side of <a href="/services/local-seo/">local SEO for Lee County businesses</a>, and it's part of every plan.</p>
+"""),
             ("Storm season, handled", """
 <p>When a storm is coming, the last thing you want is to be logging into a website. On a care plan you send me one text, and I post the closure notice, update your Google hours and put a banner on the site. When you reopen, one more text and it all changes back. My <a href="/blog/hurricane-season-website-checklist/">hurricane season checklist</a> covers what to prepare either way.</p>
+"""),
+            ("What a care plan doesn't cover", """
+<p>A care plan keeps a working site current. New pages, a new section or a full rebuild are separate jobs with their own fixed price, so you always know the cost before I start. If your current site needs more than upkeep, the <a href="/services/website-redesign/">website redesign</a> page explains how I handle that, and the <a href="/pricing/">pricing page</a> lists the packages.</p>
 """),
             ("No lock-in", """
 <p>You own the domain, code and hosting from the start, so a care plan never holds anything hostage. Stop whenever you like and everything stays exactly where it is.</p>
@@ -345,15 +369,18 @@ SERVICES = [
             "Edits on request, usually done the same day",
             "Seasonal hour and menu updates",
             "Storm closure notices on site and Google",
+            "Google Business Profile kept in step with the site",
             "Monthly uptime, form and link checks",
             "A short monthly report",
         ],
         "faq": [
             ("Do I need a care plan?", "No. Every site I build is set up so you can run it yourself, and hosting is on your own account. A care plan is for people who'd rather hand it off."),
             ("How much is a care plan?", "It depends on how often your site changes, so I quote it after a quick chat. You can cancel any time."),
+            ("Is a care plan the same as hosting?", "No. Sites I build are hosted on a Cloudflare account in your name, which for most small business sites costs nothing or a few dollars a month. A care plan is the upkeep: edits, seasonal changes and checks."),
+            ("Do you offer care plans outside Fort Myers?", "Yes. I look after sites for businesses anywhere in Lee County, including Cape Coral, Bonita Springs, Estero and the islands. It all happens by text, email and video call."),
             ("Can I get a care plan for a site you didn't build?", "Sometimes. I'd need to look at how it's built first. If it's a heavily customised WordPress site, I may suggest a different approach."),
         ],
-        "areas": ["fort-myers-beach-fl", "sanibel-fl", "bonita-springs-fl", "fort-myers-fl"],
+        "areas": ["fort-myers-fl", "cape-coral-fl", "fort-myers-beach-fl", "sanibel-fl", "bonita-springs-fl"],
         "posts": ["hurricane-season-website-checklist", "seasonal-business-website-southwest-florida"],
     },
 ]
